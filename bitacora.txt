@@ -23,3 +23,12 @@ ejemplo:
 Rol de javascript: Permite agregar funcionalidades como validar formularios y responder a los clics de los botones.
 ejemplo:
 -Mostrar un mensaje cuando el usuario haga clic en cierto boton.
+
+
+Rutas utilizadas
+
+Archivo de origen | Destino      | Ruta escrita
+index.html        | encuentranos | #encuentranos
+index.html        | google maps  | https//www.google.com/maps
+index.html        | correo       | mailto:hola@ruedalibre.example
+index.html        | portada      | imagenes/portada.jpg
