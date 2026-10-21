@@ -1,0 +1,25 @@
+URL: http://127.0.0.1:5500/index.html
+Protocolo:http//
+host:127.0.0.1
+puerto:5500
+ruta:/index.html
+metodo:Get
+status: 305
+
+
+Despues de ingresar en la barra de direccion: http://127.0.0.1:5500/promociones.html me dio este codigo de error: Cannot GET /promociones.html, este error significa que el navegador intenta abrir el archivo pero no lo encuentra en la ruta que le solicitamos.
+
+
+Rol de html: Sera la estructura de la pagina web, permitira organizar los titulos,textos,imagenes y enlaces,botones, la pagina de inicio etc.
+ejemplo:
+-Crear la pagina principal(index.html).
+-Agregar imagenes de los productos, precios y enlaces.
+
+Rol de CSS: Se encargara del diseño y la apariencia visual de la pagina, permite definir colores,tamaños de letra,fondos y demas.
+ejemplo:
+-Definir los colores de fondo.
+-Diseñar botones llamativos.
+
+Rol de javascript: Permite agregar funcionalidades como validar formularios y responder a los clics de los botones.
+ejemplo:
+-Mostrar un mensaje cuando el usuario haga clic en cierto boton.
