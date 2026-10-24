@@ -16,13 +16,13 @@
         <nav aria-label="Navegación principal">
             <p>
                 <a href="../paginas/tarifas.html">
-                    <strong>Tarifas y rutas</strong>
+                    Tarifas y rutas
                 </a>
             </p>
 
             <p>
                 <a href="../index.html">
-                    <strong>Regresar a inicio</strong>
+                    Regresar a inicio
                 </a>
             </p>
         </nav>
@@ -50,7 +50,7 @@
             <form action="#" method="post">
 
                 <fieldset>
-                    <h2><legend>Tus datos</legend></h2>
+                    <legend>Tus datos</legend>
 
                     <p>
                         <label for="nombre">Nombre completo:</label>
@@ -58,6 +58,7 @@
                             type="text"
                             id="nombre"
                             name="nombre"
+                            minlength="3"
                             autocomplete="name"
                             required>
                     </p>
@@ -68,7 +69,14 @@
                             type="text"
                             id="documento"
                             name="documento"
+                            inputmode="numeric"
+                            pattern="[0-9]{6,10}"
+                            title="Ingresa únicamente números, entre 6 y 10 dígitos."
+                            aria-describedby="ayuda-documento"
                             required>
+                        <small id="ayuda-documento">
+                            Debe contener entre 6 y 10 números, sin espacios ni letras.
+                        </small>
                     </p>
 
                     <p>
@@ -87,13 +95,21 @@
                             type="tel"
                             id="celular"
                             name="celular"
+                            inputmode="numeric"
+                            pattern="3[0-9]{9}"
+                            title="Ingresa 10 dígitos: debe comenzar por 3, por ejemplo, 3001234567."
+                            aria-describedby="ayuda-celular"
                             autocomplete="tel"
                             required>
+                        <small id="ayuda-celular">
+                            Debe tener 10 dígitos y comenzar por 3.
+                            Ejemplo: 3001234567.
+                        </small>
                     </p>
                 </fieldset>
 
                 <fieldset>
-                    <h2><legend>Tu alquiler</legend></h2>
+                    <legend>Tu alquiler</legend>
 
                     <p>
                         <label for="fecha">Fecha del alquiler:</label>
@@ -101,7 +117,13 @@
                             type="date"
                             id="fecha"
                             name="fecha"
+                            min="2026-11-01"
+                            max="2026-12-31"
                             required>
+                        <small>
+                            Selecciona una fecha entre el 1 de noviembre
+                            y el 31 de diciembre de 2026.
+                        </small>
                     </p>
 
                     <p>Tipo de bicicleta:</p>
@@ -135,7 +157,7 @@
                     </p>
 
                     <p>
-                        <label for="plan">Tiempo de alquiler:</label>
+                        <label for="plan">Plan de alquiler:</label>
                         <select id="plan" name="plan" required>
                             <option value="">Selecciona un plan</option>
                             <option value="1_hora">1 hora</option>
@@ -151,6 +173,7 @@
                             id="cantidad"
                             name="cantidad"
                             min="1"
+                            max="6"
                             step="1"
                             value="1"
                             required>
@@ -158,7 +181,7 @@
 
                     <p>
                         <label for="recorrido">Recorrido guiado:</label>
-                        <select id="recorrido" name="recorrido" required>
+                        <select id="recorrido" name="recorrido">
                             <option value="ninguno">Ninguno</option>
                             <option value="rio_parques">Río y parques</option>
                             <option value="sabores_barrio">Sabores de barrio</option>
@@ -167,19 +190,25 @@
                     </p>
 
                     <p>
-                        <label for="comentarios">Comentarios adicionales:</label>
+                        <label for="comentarios">Comentarios adicionales (opcional):</label>
                         <br>
                         <textarea
                             id="comentarios"
                             name="comentarios"
                             rows="5"
                             cols="40"
+                            maxlength="300"
+                            aria-describedby="ayuda-comentarios"
                             placeholder="Escribe aquí tus comentarios"></textarea>
+                        <br>
+                        <small id="ayuda-comentarios">
+                            Máximo 300 caracteres.
+                        </small>
                     </p>
                 </fieldset>
 
                 <fieldset>
-                    <h2><legend>Confirmación</legend></h2>
+                    <legend>Confirmación</legend>
 
                     <p>
                         <input

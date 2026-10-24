@@ -82,7 +82,7 @@ Justificación de las etiquetas
     <footer>: identifica el pie de página.
     <div> y <span>: solo se conservarán si son necesarios para agrupar contenido o aplicar estilos y no existe una etiqueta semántica más apropiada.
 
-Comprobaciones finales
+Comprobaciones organizacion codigo
 
     Las tres páginas tienen un encabezado con navegación, un único contenido principal y un pie de página.
     Cada sección tiene su propio encabezado.
@@ -91,6 +91,18 @@ Comprobaciones finales
     Se conservan los textos, las imágenes, las tablas, los formularios y los enlaces existentes.
     Se comprueba que los enlaces entre las páginas siguen funcionando.
     Se verifica el sitio en el navegador antes de hacer commit y push.
+
+
+Comprobaciones reservas
+
+1	Nombre completo / 	Dejar el campo vacío/ El navegador impide el envío porque el campo es obligatorio.	
+2	Nombre completo	/ Ana/ El campo acepta el nombre porque tiene 3 caracteres.	
+3	Documento/ 12345A /	El navegador rechaza el dato porque contiene una letra y no cumple el patrón.	
+4	Documento/ 123456/ El campo acepta el documento porque tiene 6 dígitos.	
+5	Correo/ correo-invalido	/ El navegador rechaza el formato del correo electrónico.	
+6	Celular	/ 3001234567/ El campo acepta el número porque tiene 10 dígitos y empieza por 3.	
+7	Celular	/ 1234567890/	El navegador rechaza el número porque no empieza por 3.	
+8	Celular	/300123	/ El navegador rechaza el número porque tiene menos de 10 dígitos.
 
 
 
