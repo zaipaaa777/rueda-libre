@@ -35,3 +35,62 @@ index.html        | portada      | imagenes/portada.jpg
 
 
 
+Organizacion estructura
+
+Página 1: Inicio (index.html)
+
+    <header>: nombre del negocio y menú de navegación.
+        <nav>: enlaces a inicio, tarifas y reservas, según los enlaces existentes.
+    <main>: contenido principal de la página.
+        <section>: presentación del negocio.
+        <section>: quiénes somos.
+        <section>: nuestros servicios.
+            <article>: alquiler de bicicletas.
+            <article>: recorridos guiados.
+            <article>: taller básico.
+        <section>: cómo alquilar y beneficios.
+        <section>: ubicación y contacto.
+    <footer>: derechos reservados y correo electrónico.
+
+Página 2: Tarifas (paginas/tarifas.html)
+
+    <header>: nombre del negocio y menú de navegación.
+        <nav>: enlaces de navegación.
+    <main>: contenido principal de tarifas.
+        <section>: primera tabla de tarifas, con su encabezado.
+        <section>: segunda tabla o información de rutas, con su encabezado, si existe.
+        <aside>: lista de elementos que se recomienda llevar.
+    <footer>: información final y contacto.
+
+Página 3: Reservas (paginas/reservas.html)
+
+    <header>: nombre del negocio y menú de navegación.
+        <nav>: enlaces de navegación.
+    <main>: contenido principal de reservas.
+        <section>: formulario de reservas, con su encabezado.
+        <aside>: horario de atención, con su encabezado.
+    <footer>: información final y contacto.
+
+Justificación de las etiquetas
+
+    <header>: identifica el encabezado de la página.
+    <nav>: identifica el menú de navegación principal.
+    <main>: identifica el contenido principal de cada página. Debe existir un único elemento visible por página.
+    <section>: agrupa contenido relacionado bajo un encabezado.
+    <article>: identifica cada servicio independiente de la página de inicio.
+    <aside>: contiene información complementaria, como la lista de elementos que se recomienda llevar y el horario de atención.
+    <footer>: identifica el pie de página.
+    <div> y <span>: solo se conservarán si son necesarios para agrupar contenido o aplicar estilos y no existe una etiqueta semántica más apropiada.
+
+Comprobaciones finales
+
+    Las tres páginas tienen un encabezado con navegación, un único contenido principal y un pie de página.
+    Cada sección tiene su propio encabezado.
+    Los servicios de la página de inicio están dentro de elementos <article>.
+    Se conserva la jerarquía de encabezados establecida en la actividad del Día 1.
+    Se conservan los textos, las imágenes, las tablas, los formularios y los enlaces existentes.
+    Se comprueba que los enlaces entre las páginas siguen funcionando.
+    Se verifica el sitio en el navegador antes de hacer commit y push.
+
+
+

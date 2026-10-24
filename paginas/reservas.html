@@ -44,6 +44,163 @@
             </p>
         </section>
 
+        <section id="formulario-reserva">
+            <h2>Formulario de reserva</h2>
+
+            <form action="#" method="post">
+
+                <fieldset>
+                    <h2><legend>Tus datos</legend></h2>
+
+                    <p>
+                        <label for="nombre">Nombre completo:</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            autocomplete="name"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="documento">Número de documento:</label>
+                        <input
+                            type="text"
+                            id="documento"
+                            name="documento"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="correo">Correo electrónico:</label>
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            autocomplete="email"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="celular">Celular:</label>
+                        <input
+                            type="tel"
+                            id="celular"
+                            name="celular"
+                            autocomplete="tel"
+                            required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <h2><legend>Tu alquiler</legend></h2>
+
+                    <p>
+                        <label for="fecha">Fecha del alquiler:</label>
+                        <input
+                            type="date"
+                            id="fecha"
+                            name="fecha"
+                            required>
+                    </p>
+
+                    <p>Tipo de bicicleta:</p>
+
+                    <p>
+                        <input
+                            type="radio"
+                            id="urbana"
+                            name="tipo_bicicleta"
+                            value="urbana"
+                            required>
+                        <label for="urbana">Urbana</label>
+                    </p>
+
+                    <p>
+                        <input
+                            type="radio"
+                            id="montana"
+                            name="tipo_bicicleta"
+                            value="montana">
+                        <label for="montana">Montaña</label>
+                    </p>
+
+                    <p>
+                        <input
+                            type="radio"
+                            id="electrica"
+                            name="tipo_bicicleta"
+                            value="electrica">
+                        <label for="electrica">Eléctrica</label>
+                    </p>
+
+                    <p>
+                        <label for="plan">Tiempo de alquiler:</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Selecciona un plan</option>
+                            <option value="1_hora">1 hora</option>
+                            <option value="medio_dia">Medio día</option>
+                            <option value="dia_completo">Día completo</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="cantidad">Cantidad de bicicletas:</label>
+                        <input
+                            type="number"
+                            id="cantidad"
+                            name="cantidad"
+                            min="1"
+                            step="1"
+                            value="1"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="recorrido">Recorrido guiado:</label>
+                        <select id="recorrido" name="recorrido" required>
+                            <option value="ninguno">Ninguno</option>
+                            <option value="rio_parques">Río y parques</option>
+                            <option value="sabores_barrio">Sabores de barrio</option>
+                            <option value="reto_palmas">Reto Las Palmas</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="comentarios">Comentarios adicionales:</label>
+                        <br>
+                        <textarea
+                            id="comentarios"
+                            name="comentarios"
+                            rows="5"
+                            cols="40"
+                            placeholder="Escribe aquí tus comentarios"></textarea>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <h2><legend>Confirmación</legend></h2>
+
+                    <p>
+                        <input
+                            type="checkbox"
+                            id="politicas"
+                            name="politicas"
+                            value="aceptadas"
+                            required>
+                        <label for="politicas">
+                            Acepto las políticas de alquiler.
+                        </label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Enviar reserva</button>
+                </p>
+
+            </form>
+        </section>
+
         <aside id="horarios-atencion">
             <h2>Horarios de atención</h2>
 
@@ -58,14 +215,6 @@
                 <dd>6:00 am - 2:00 pm</dd>
             </dl>
         </aside>
-
-        <section id="imagen-reservas">
-            <h2>Rueda Libre</h2>
-
-            <img src="../imagenes/portada.jpg"
-                 alt="Portada de Rueda Libre"
-                 width="15%">
-        </section>
 
     </main>
 
@@ -85,3 +234,4 @@
 </body>
 
 </html>
+
