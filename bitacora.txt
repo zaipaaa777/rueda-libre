@@ -32,3 +32,6 @@ index.html        | encuentranos | #encuentranos
 index.html        | google maps  | https//www.google.com/maps
 index.html        | correo       | mailto:hola@ruedalibre.example
 index.html        | portada      | imagenes/portada.jpg
+
+
+
