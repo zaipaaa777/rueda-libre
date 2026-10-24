@@ -105,4 +105,33 @@ Comprobaciones reservas
 8	Celular	/300123	/ El navegador rechaza el número porque tiene menos de 10 dígitos.
 
 
+Correcciones
+
+1	Imágenes de inicio:	Las imágenes tienen textos alternativos, pero es necesario comprobar si describen fielmente su contenido.	Mejorar las descripciones cuando sea necesario y utilizar alt="" para imágenes decorativas.
+2	Imágenes de tarifas y reservas:	Se debe comprobar que todas las imágenes tengan el atributo alt.	Añadir una descripción adecuada o un texto alternativo vacío si son decorativas.
+3	Jerarquía de encabezados:	La estructura debe mantener una jerarquía lógica en las tres páginas.	Conservar un título principal y organizar las secciones con encabezados 
+4	Enlaces de navegación:	Los enlaces principales tienen textos descriptivos.	Mantener nombres claros que permitan identificar su destino fuera de contexto.
+5	Idioma del documento:	Las páginas utilizan lang="es".	
+6	Navegación  teclado:	Es necesario comprobar el orden del foco y la visibilidad del indicador de foco.	Probar Tab, Shift + Tab y Enter; corregir cualquier orden ilógico.
+7	Formulario de reservas:	Los campos usan etiquetas asociadas con sus controles.	Comprobar que cada etiqueta active el control correcto y que se pueda completar el formulario sin mouse.
+
+
+ uso de colores
+
+    Crema: fondo principal de las páginas, siempre que la combinación con el texto elegido cumpla los requisitos de contraste.
+    Azul Noche: color preferido para títulos y texto principal sobre fondos claros, si supera la comprobación de contraste.
+    Verde Ruta: color de identidad visual para elementos de navegación, botones o detalles de marca, según el resultado de contraste.
+    Naranja Pedal: color de acento para destacar elementos importantes, sin utilizarlo para texto pequeño sobre fondos cuando la combinación no alcance el mínimo requerido.
+    Gris Asfalto: alternativa para texto secundario sobre Crema.
+
+
+
+
+    link pagina: https://zaipaaa777.github.io/rueda-libre/
+
+
+
+
+
+
 
