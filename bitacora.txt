@@ -132,6 +132,17 @@ Correcciones
 
 
 
+    Comprobación de herencia CSS en Rueda Libre.
+
+Propiedad heredada: font-family. Al inspeccionar un párrafo en DevTools, comprobé que utiliza Open Sans, definida en el selector body mediante la variable --fuente-texto.
+
+Propiedad no heredada: margin. Comprobé que los márgenes no se heredan automáticamente desde body. Los párrafos tienen sus propios márgenes definidos en la hoja de estilos.
+
+Resultado: La hoja de estilos externa permite mantener los colores y las tipografías de la marca en las tres páginas, utilizando variables CSS y herencia para las propiedades correspondientes.
+
+
+
+
 
 
 

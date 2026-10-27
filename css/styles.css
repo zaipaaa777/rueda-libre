@@ -1,0 +1,133 @@
+:root {
+    
+    --color-verde-ruta: #1E7A4F;
+    --color-naranja-pedal: #F39A2B;
+    --color-azul-noche: #14213D;
+    --color-crema: #FAF6EF;
+    --color-gris-asfalto: #5B6470;
+
+    
+    --fuente-titulos: "Montserrat", Arial, sans-serif;
+    --fuente-texto: "Open Sans", Arial, sans-serif;
+
+   
+    --espacio-pequeno: 0.5rem;
+    --espacio-mediano: 1rem;
+    --espacio-grande: 2rem;
+    --espacio-extra-grande: 3rem;
+}
+
+
+body {
+    margin: 0;
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-azul-noche);
+    background-color: var(--color-crema);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-azul-noche);
+}
+
+/* Encabezado */
+header {
+    padding: var(--espacio-grande);
+    text-align: center;
+    background-color: var(--color-azul-noche);
+    color: var(--color-crema);
+}
+
+header h1 {
+    color: var(--color-crema);
+}
+
+/* Navegación */
+nav a {
+    color: var(--color-crema);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--color-naranja-pedal);
+}
+
+/* Enlaces del contenido */
+main a {
+    color: var(--color-verde-ruta);
+    font-weight: 600;
+}
+
+main a:hover,
+main a:focus-visible {
+    color: var(--color-azul-noche);
+}
+
+/* Texto secundario */
+small {
+    color: var(--color-gris-asfalto);
+    font-size: 0.875rem;
+}
+
+/* Botones principales */
+button {
+    padding: var(--espacio-pequeno) var(--espacio-grande);
+    border: none;
+    border-radius: var(--espacio-pequeno);
+    background-color: var(--color-verde-ruta);
+    color: var(--color-crema);
+    font-family: var(--fuente-texto);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-azul-noche);
+}
+
+/* Destacados */
+.destacado {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+}
+
+/* Tablas */
+thead th {
+    background-color: var(--color-azul-noche);
+    color: var(--color-crema);
+}
+
+th,
+td {
+    padding: var(--espacio-mediano);
+    border: 1px solid var(--color-gris-asfalto);
+}
+
+/* Pie de página */
+footer {
+    padding: var(--espacio-grande);
+    text-align: center;
+    background-color: var(--color-azul-noche);
+    color: var(--color-crema);
+}
+
+footer a {
+    color: var(--color-crema);
+}
+
+footer a:hover,
+footer a:focus-visible {
+    color: var(--color-naranja-pedal);
+}
