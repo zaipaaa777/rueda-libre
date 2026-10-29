@@ -7,112 +7,121 @@
 
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
 
-   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
           rel="stylesheet">
 
-  
     <link rel="stylesheet" href="css/styles.css">
-  
 </head>
 
 <body>
 
-    <header>
-        
-            <h1>Rueda Libre</h1>
-            <img src = imagenes/portada.jpg alt="Portada de rueda libre" width="20%">
-            <p> ¡Bienvenido a Rueda libre! el mejor negocio de alquiler de bicicletas en Medellin</p>
+    <header class="portada">
 
+        <h1>Rueda Libre</h1>
 
-            <nav aria-label="Navegación principal">
-                <ul id="menu">
-                    <li>
-                        <a href="index.html" class="activo" aria-current="page">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="paginas/tarifas.html">Tarifas y rutas</a>
-                    </li>
-                    <li>
-                        <a href="paginas/reservas.html">Reservar</a>
-                    </li>
-                    <li>
-                        <a href="#encuentranos">Encuéntranos</a>
-                    </li>
-                </ul>
+        <img src="imagenes/portada.jpg"
+             alt="Portada de Rueda Libre">
+
+        <p>
+            ¡Bienvenido a Rueda Libre! El mejor negocio de alquiler
+            de bicicletas en Medellín.
+        </p>
+
+        <nav aria-label="Navegación principal">
+            <ul id="menu">
+                <li>
+                    <a href="index.html" class="activo" aria-current="page">Inicio</a>
+                </li>
+                <li>
+                    <a href="paginas/tarifas.html">Tarifas y rutas</a>
+                </li>
+                <li>
+                    <a href="paginas/reservas.html">Reservar</a>
+                </li>
+                <li>
+                    <a href="#encuentranos">Encuéntranos</a>
+                </li>
+            </ul>
         </nav>
+
     </header>
 
     <main>
 
         <section id="quienes-somos">
-            <h2>Quienes somos?</h2>
+            <h2>¿Quiénes somos?</h2>
+
             <p>
-                En Rueda libre ofrecemos alquiler de bicicletas
+                En Rueda Libre ofrecemos alquiler de bicicletas
                 y recorridos para descubrir nuevos lugares.
                 Queremos que vivas y disfrutes de nuevas experiencias.
-                
             </p>
         </section>
 
-        <h2>Nuestros servicios</h2>
-        <ul>
-            <li>Alquiler de bicicletas</li>
-            <li>Recorridos guiados</li>
-            <li>Taller basico</li>
-        </ul>
-
-
-
         <section id="informacion-servicios">
-            <h2>Informacion servicios</h2>
 
-            <article>
+            <h2>Nuestros servicios</h2>
 
-                <h3>Alquiler de bicicletas</h3>
-                <p>
-                    Alquilamos bicicletas urbanas,de montaña y electricas.
-                    El servicio incluye <strong>casco y candado.</strong>
+            <div class="contenedor-servicios">
 
-                </p>
-                <img src = imagenes/bicicleta.jpg alt="bicicleta de muestra" width="10%">
-                
-            </article>
+                <article class="tarjeta-servicio">
 
-            <article>
+                    <h3>Alquiler de bicicletas</h3>
 
-                <h3>Recorridos guiados</h3>
-                <p>
-                    Exploramos diferentes rutas en bicicleta.
-                    Disfruta le experiencia y conoce nuevos lugares.
-                </p>
-                <img src = imagenes/ruta.jpg alt="demostracion ruta" width="10%">
-                <p> 
-                    <a href = "paginas/tarifas.html">Rutas disponibles</a>
-                </p>
+                    <img src="imagenes/bicicleta.jpg"
+                        alt="Bicicleta de muestra">
 
-            </article>
+                    <p>
+                        Alquilamos bicicletas urbanas, de montaña y eléctricas.
+                        El servicio incluye <strong>casco y candado.</strong>
+                    </p>
 
+                </article>
 
-            <article>
+                <article class="tarjeta-servicio">
 
-                <h3>Taller basico</h3>
-                <p>
-                    Ofrecemos apoyo basico para revisar <strong>frenos,
-                    llantas</strong> y otros componentes de la bicicleta.
-                </p>
-                <img src = imagenes/mecanica.jpg alt="demostracion mecanica" width="10%">
+                    <h3>Recorridos guiados</h3>
 
-            </article>
+                    <img src="imagenes/ruta.jpg"
+                        alt="Demostración de una ruta">
+
+                    <p>
+                        Exploramos diferentes rutas en bicicleta.
+                        Disfruta la experiencia y conoce nuevos lugares.
+                    </p>
+
+                    <p>
+                        <a href="paginas/tarifas.html">Rutas disponibles</a>
+                    </p>
+
+                </article>
+
+                <article class="tarjeta-servicio">
+
+                    <h3>Taller básico</h3>
+
+                    <img src="imagenes/mecanica.jpg"
+                        alt="Demostración de mecánica">
+
+                    <p>
+                        Ofrecemos apoyo básico para revisar <strong>frenos,
+                        llantas</strong> y otros componentes de la bicicleta.
+                    </p>
+
+                </article>
+
+            </div>
 
         </section>
 
+        
         <section id="como-alquilar">
-            <h2>Como alquilar?</h2>
-            
+
+            <h2>¿Cómo alquilar?</h2>
+
             <ol>
                 <li>Elige el tipo de bicicleta.</li>
                 <li>Selecciona el tiempo de alquiler.</li>
@@ -121,8 +130,9 @@
             </ol>
 
             <h3>Beneficios de nuestros servicios</h3>
+
             <ul>
-                <li>Tarifas claras y economicas.</li>
+                <li>Tarifas claras y económicas.</li>
                 <li>Casco y candado incluidos.</li>
                 <li>Opciones para diferentes niveles de experiencia.</li>
             </ul>
@@ -130,28 +140,33 @@
         </section>
 
         <section id="encuentranos">
-            <h2>Encuentranos</h2>
+
+            <h2>Encuéntranos</h2>
+
             <p>
-                Visitanos en Rueda libre y disfruta de nuestros servicios
+                Visítanos en Rueda Libre y disfruta de nuestros servicios.
             </p>
 
-            <h3>Nuestra ubicacion</h3>
-            
-            <p>
-                <a href="https://www.google.com/maps/place/Medell%C3%ADn,+Antioquia/@6.2442872,-75.622497,13z/data=!3m1!4b1!4m6!3m5!1s0x8e4428dfb80fad05:0x42137cfcc7b53b56!8m2!3d6.2476376!4d-75.5658153!16zL20vMDF4XzZz?entry=ttu&g_ep=EgoyMDI2MTAxOC4wIKXMDSoASAFQAw%3D%3D">ubicacion en Google Maps</a>
+            <h3>Nuestra ubicación</h3>
 
+            <p>
+                <a href="https://www.google.com/maps/place/Medell%C3%ADn,+Antioquia/">
+                    Ubicación en Google Maps
+                </a>
             </p>
 
-            <h3>Contactanos</h3>
+            <h3>Contáctanos</h3>
+
             <p>
-                ¿Tienes alguna duda?, escribenos al correo
-            </p>
-            <p>
-                <a href="mailto:hola@ruedalibre.example"> hola@ruedalibre.example</a>
+                ¿Tienes alguna duda? Escríbenos al correo:
             </p>
 
-            
-            
+            <p>
+                <a href="mailto:hola@ruedalibre.example">
+                    hola@ruedalibre.example
+                </a>
+            </p>
+
         </section>
 
         <p>
@@ -163,8 +178,9 @@
     </main>
 
     <footer>
+
         <p>
-            &copy;2026 Rueda libre.
+            &copy; 2026 Rueda Libre.
             Todos los derechos reservados.
         </p>
 
@@ -173,8 +189,8 @@
                 hola@ruedalibre.example
             </a>
         </p>
+
     </footer>
 
-    
-    
+</body>
 </html>

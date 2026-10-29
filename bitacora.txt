@@ -143,6 +143,20 @@ Resultado: La hoja de estilos externa permite mantener los colores y las tipogra
 
 
 
+Elemento inspeccionado: .tarjeta-servicio
+
+Herramienta: google chrome DevTools, Computed.
+Medición 1: content-box
+
+    Ancho exterior de la tarjeta: 1026 px.
+   
+Medición 2: border-box
+
+    Ancho exterior de la tarjeta: 1026 px.
+
+
+
+
 
 
 

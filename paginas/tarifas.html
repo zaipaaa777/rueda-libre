@@ -7,137 +7,151 @@
 
     <title>Rueda Libre | Tarifas y rutas</title>
 
-   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
           rel="stylesheet">
 
-  
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-
-
-<header> 
-
-    <h1>Rueda libre - Tarifas y rutas</h1>
-
-    <img src = ../imagenes/portada.jpg alt="Portada de rueda libre" width="10%">
-
-    <nav aria-label="Navegacion princiapal">
-
-        <ul id="menu">
-
-            <p> 
-                <a href="../paginas/reservas.html"><strong>Reservar</strong></a>
-            </p>
-            <p>
-                <a href="../index.html"><strong>Regresar a inicio</strong></a>
-            </p>
-
-        </ul>
-    </nav>
-
-</header>
-
-
 <body>
+
+    <header>
+
+        <h1>Rueda Libre - Tarifas y rutas</h1>
+
+        <img src="../imagenes/portada.jpg"
+             alt="Portada de Rueda Libre">
+
+        <nav aria-label="Navegación principal">
+            <ul id="menu">
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="tarifas.html" class="activo" aria-current="page">Tarifas y rutas</a>
+                </li>
+                <li>
+                    <a href="reservas.html">Reservar</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
     <main>
+
         <section id="tarifas">
-                <h2>Tarifas de alquiler</h2>
 
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th scope="col">Tipo de bicicleta</th>
-                            <th scope="col">1 hora</th>
-                            <th scope="col">Medio dia (4 h)</th>
-                            <th scope="col">Dia completo</th>
-                        </tr>
-                    </thead>
+            <h2>Tarifas de alquiler</h2>
 
-                    <tbody>
-                        <tr>
-                            <th scope="row">Urbana</th>
-                            <td>$10.000</td>
-                            <td>$30.000</td>
-                            <td>$50.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Montaña</th>
-                            <td>$15.000</td>
-                            <td>$45.000</td>
-                            <td>$70.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Electrica</th>
-                            <td>$25.000</td>
-                            <td>$70.000</td>
-                            <td>$110.000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Tipo de bicicleta</th>
+                        <th scope="col">1 hora</th>
+                        <th scope="col">Medio día (4 h)</th>
+                        <th scope="col">Día completo</th>
+                    </tr>
+                </thead>
 
-            <section id="Recorridos">
-                <h2>Tarifas de recorrido</h2>
+                <tbody>
+                    <tr>
+                        <th scope="row">Urbana</th>
+                        <td>$10.000</td>
+                        <td>$30.000</td>
+                        <td>$50.000</td>
+                    </tr>
 
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th scope="col">Recorrido</th>
-                            <th scope="col">Distancia</th>
-                            <th scope="col">Duracion</th>
-                            <th scope="col">Nivel</th>
-                            <th scope="col">Precio por persona</th>
-                        </tr>
-                    </thead>
+                    <tr>
+                        <th scope="row">Montaña</th>
+                        <td>$15.000</td>
+                        <td>$45.000</td>
+                        <td>$70.000</td>
+                    </tr>
 
-                    <tbody>
-                        <tr>
-                            <th scope="row">Rio y parques</th>
-                            <td>12 km</td>
-                            <td>2 h</td>
-                            <td>Facil</td>
-                            <td>$45.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sabores de barrio</th>
-                            <td>18 km</td>
-                            <td>3 h</td>
-                            <td>Medio</td>
-                            <td>$60.000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Reto las palmas</th>
-                            <td>25 km</td>
-                            <td>4 h</td>
-                            <td>Dificil</td>
-                            <td>$85.000</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-            </section>
+                    <tr>
+                        <th scope="row">Eléctrica</th>
+                        <td>$25.000</td>
+                        <td>$70.000</td>
+                        <td>$110.000</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <aside>
+        </section>
 
-                <h2>Informacion adicional</h2>
+        <section id="recorridos">
 
-                <p>Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y 
-                    domingos a las 7:00 a. m. Qué llevar: ropa cómoda, agua, protector solar y documento de identidad.</p>
+            <h2>Tarifas de recorridos</h2>
 
-            </aside>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Recorrido</th>
+                        <th scope="col">Distancia</th>
+                        <th scope="col">Duración</th>
+                        <th scope="col">Nivel</th>
+                        <th scope="col">Precio por persona</th>
+                    </tr>
+                </thead>
 
-        </main>
-</body>
+                <tbody>
+                    <tr>
+                        <th scope="row">Río y parques</th>
+                        <td>12 km</td>
+                        <td>2 h</td>
+                        <td>Fácil</td>
+                        <td>$45.000</td>
+                    </tr>
 
-   <footer>
+                    <tr>
+                        <th scope="row">Sabores de barrio</th>
+                        <td>18 km</td>
+                        <td>3 h</td>
+                        <td>Medio</td>
+                        <td>$60.000</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Reto Las Palmas</th>
+                        <td>25 km</td>
+                        <td>4 h</td>
+                        <td>Difícil</td>
+                        <td>$85.000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <aside id="informacion-adicional">
+
+            <h2>Información adicional</h2>
+
+            <p>
+                Todas las tarifas incluyen casco y candado.
+                Los recorridos salen sábados y domingos a las 7:00 a. m.
+                Qué llevar: ropa cómoda, agua, protector solar y
+                documento de identidad.
+            </p>
+
+        </aside>
+
         <p>
-            &copy;2026 Rueda libre.
+            <a href="reservas.html" class="boton-reserva">
+                Reservar ahora
+            </a>
+        </p>
+
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2026 Rueda Libre.
             Todos los derechos reservados.
         </p>
 
@@ -146,6 +160,8 @@
                 hola@ruedalibre.example
             </a>
         </p>
+
     </footer>
 
+</body>
 </html>

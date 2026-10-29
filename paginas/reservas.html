@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,52 +9,46 @@
 
     <title>Rueda Libre | Reservas</title>
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
           rel="stylesheet">
 
-    
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
 
     <header>
+
         <h1>Reservas - Rueda Libre</h1>
 
         <nav aria-label="Navegación principal">
             <ul id="menu">
-
                 <li>
-
-                    <p>
-                        <a href="../paginas/tarifas.html">
-                            Tarifas y rutas
-                        </a>
-                    </p>
+                    <a href="../index.html">Inicio</a>
                 </li>
                 <li>
-                    <p>
-                        <a href="../index.html">
-                            Regresar a inicio
-                        </a>
-                    </p>
+                    <a href="tarifas.html">Tarifas y rutas</a>
+                </li>
+                <li>
+                    <a href="reservas.html" class="activo" aria-current="page">Reservar</a>
                 </li>
             </ul>
         </nav>
+
     </header>
 
     <main>
 
         <section id="contacto-reservas">
-            <h2>Contacto reservas</h2>
+
+            <h2>Contacto para reservas</h2>
 
             <p>
-                Puedes contactarte con nosotros para reservar mediante el correo:
+                Puedes contactarte con nosotros para reservar
+                mediante el correo:
             </p>
 
             <p>
@@ -61,18 +56,28 @@
                     hola@ruedalibre.example
                 </a>
             </p>
+
         </section>
 
         <section id="formulario-reserva">
+
             <h2>Formulario de reserva</h2>
+
+            <p>
+                Completa los siguientes datos para solicitar
+                el alquiler de tu bicicleta.
+            </p>
 
             <form action="#" method="post">
 
                 <fieldset>
+
                     <legend>Tus datos</legend>
 
-                    <p>
+                    <div class="grupo-formulario">
+
                         <label for="nombre">Nombre completo:</label>
+
                         <input
                             type="text"
                             id="nombre"
@@ -80,10 +85,13 @@
                             minlength="3"
                             autocomplete="name"
                             required>
-                    </p>
 
-                    <p>
+                    </div>
+
+                    <div class="grupo-formulario">
+
                         <label for="documento">Número de documento:</label>
+
                         <input
                             type="text"
                             id="documento"
@@ -93,45 +101,59 @@
                             title="Ingresa únicamente números, entre 6 y 10 dígitos."
                             aria-describedby="ayuda-documento"
                             required>
-                        <small id="ayuda-documento">
-                            Debe contener entre 6 y 10 números, sin espacios ni letras.
-                        </small>
-                    </p>
 
-                    <p>
+                        <small id="ayuda-documento">
+                            Debe contener entre 6 y 10 números,
+                            sin espacios ni letras.
+                        </small>
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
                         <label for="correo">Correo electrónico:</label>
+
                         <input
                             type="email"
                             id="correo"
                             name="correo"
                             autocomplete="email"
                             required>
-                    </p>
 
-                    <p>
+                    </div>
+
+                    <div class="grupo-formulario">
+
                         <label for="celular">Celular:</label>
+
                         <input
                             type="tel"
                             id="celular"
                             name="celular"
                             inputmode="numeric"
                             pattern="3[0-9]{9}"
-                            title="Ingresa 10 dígitos: debe comenzar por 3, por ejemplo, 3001234567."
+                            title="Ingresa 10 dígitos. El número debe comenzar por 3."
                             aria-describedby="ayuda-celular"
                             autocomplete="tel"
                             required>
+
                         <small id="ayuda-celular">
                             Debe tener 10 dígitos y comenzar por 3.
                             Ejemplo: 3001234567.
                         </small>
-                    </p>
+
+                    </div>
+
                 </fieldset>
 
                 <fieldset>
+
                     <legend>Tu alquiler</legend>
 
-                    <p>
+                    <div class="grupo-formulario">
+
                         <label for="fecha">Fecha del alquiler:</label>
+
                         <input
                             type="date"
                             id="fecha"
@@ -139,54 +161,76 @@
                             min="2026-11-01"
                             max="2026-12-31"
                             required>
+
                         <small>
                             Selecciona una fecha entre el 1 de noviembre
                             y el 31 de diciembre de 2026.
                         </small>
-                    </p>
 
-                    <p>Tipo de bicicleta:</p>
+                    </div>
 
-                    <p>
-                        <input
-                            type="radio"
-                            id="urbana"
-                            name="tipo_bicicleta"
-                            value="urbana"
-                            required>
-                        <label for="urbana">Urbana</label>
-                    </p>
+                    <div class="grupo-formulario">
 
-                    <p>
-                        <input
-                            type="radio"
-                            id="montana"
-                            name="tipo_bicicleta"
-                            value="montana">
-                        <label for="montana">Montaña</label>
-                    </p>
+                        <p class="titulo-opciones">Tipo de bicicleta:</p>
 
-                    <p>
-                        <input
-                            type="radio"
-                            id="electrica"
-                            name="tipo_bicicleta"
-                            value="electrica">
-                        <label for="electrica">Eléctrica</label>
-                    </p>
+                        <div class="opcion-formulario">
 
-                    <p>
+                            <input
+                                type="radio"
+                                id="urbana"
+                                name="tipo_bicicleta"
+                                value="urbana"
+                                required>
+
+                            <label for="urbana">Urbana</label>
+
+                        </div>
+
+                        <div class="opcion-formulario">
+
+                            <input
+                                type="radio"
+                                id="montana"
+                                name="tipo_bicicleta"
+                                value="montana">
+
+                            <label for="montana">Montaña</label>
+
+                        </div>
+
+                        <div class="opcion-formulario">
+
+                            <input
+                                type="radio"
+                                id="electrica"
+                                name="tipo_bicicleta"
+                                value="electrica">
+
+                            <label for="electrica">Eléctrica</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
                         <label for="plan">Plan de alquiler:</label>
+
                         <select id="plan" name="plan" required>
+
                             <option value="">Selecciona un plan</option>
                             <option value="1_hora">1 hora</option>
                             <option value="medio_dia">Medio día</option>
                             <option value="dia_completo">Día completo</option>
-                        </select>
-                    </p>
 
-                    <p>
+                        </select>
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
                         <label for="cantidad">Cantidad de bicicletas:</label>
+
                         <input
                             type="number"
                             id="cantidad"
@@ -196,77 +240,100 @@
                             step="1"
                             value="1"
                             required>
-                    </p>
 
-                    <p>
+                    </div>
+
+                    <div class="grupo-formulario">
+
                         <label for="recorrido">Recorrido guiado:</label>
+
                         <select id="recorrido" name="recorrido">
+
                             <option value="ninguno">Ninguno</option>
                             <option value="rio_parques">Río y parques</option>
                             <option value="sabores_barrio">Sabores de barrio</option>
                             <option value="reto_palmas">Reto Las Palmas</option>
-                        </select>
-                    </p>
 
-                    <p>
-                        <label for="comentarios">Comentarios adicionales (opcional):</label>
-                        <br>
+                        </select>
+
+                    </div>
+
+                    <div class="grupo-formulario">
+
+                        <label for="comentarios">
+                            Comentarios adicionales (opcional):
+                        </label>
+
                         <textarea
                             id="comentarios"
                             name="comentarios"
                             rows="5"
-                            cols="40"
                             maxlength="300"
                             aria-describedby="ayuda-comentarios"
                             placeholder="Escribe aquí tus comentarios"></textarea>
-                        <br>
+
                         <small id="ayuda-comentarios">
                             Máximo 300 caracteres.
                         </small>
-                    </p>
+
+                    </div>
+
                 </fieldset>
 
                 <fieldset>
+
                     <legend>Confirmación</legend>
 
-                    <p>
+                    <div class="opcion-formulario">
+
                         <input
                             type="checkbox"
                             id="politicas"
                             name="politicas"
                             value="aceptadas"
                             required>
+
                         <label for="politicas">
                             Acepto las políticas de alquiler.
                         </label>
-                    </p>
+
+                    </div>
+
                 </fieldset>
 
-                <p>
+                <div class="grupo-boton">
+
                     <button type="submit">Enviar reserva</button>
-                </p>
+
+                </div>
 
             </form>
+
         </section>
 
         <aside id="horarios-atencion">
+
             <h2>Horarios de atención</h2>
 
             <dl>
-                <dt><strong>Lunes a viernes</strong></dt>
-                <dd>7:00 am - 7:00 pm</dd>
 
-                <dt><strong>Sábados y domingos</strong></dt>
-                <dd>6:00 am - 2:00 pm</dd>
+                <dt>Lunes a viernes</dt>
+                <dd>7:00 a. m. - 7:00 p. m.</dd>
 
-                <dt><strong>Festivos</strong></dt>
-                <dd>6:00 am - 2:00 pm</dd>
+                <dt>Sábados y domingos</dt>
+                <dd>6:00 a. m. - 2:00 p. m.</dd>
+
+                <dt>Festivos</dt>
+                <dd>6:00 a. m. - 2:00 p. m.</dd>
+
             </dl>
+
         </aside>
 
     </main>
 
     <footer>
+
         <p>
             &copy; 2026 Rueda Libre.
             Todos los derechos reservados.
@@ -277,9 +344,13 @@
                 hola@ruedalibre.example
             </a>
         </p>
+
+        <p>
+            <a href="../index.html">Volver al inicio</a>
+        </p>
+
     </footer>
 
 </body>
-
 </html>
 

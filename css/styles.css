@@ -1,4 +1,4 @@
-/* ==1. VARIABLES DE LA MARCA == */
+/* === 1. VARIABLES === */
 
 :root {
     /* Colores oficiales */
@@ -8,7 +8,7 @@
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
 
-    /* Tipografías */
+    /* Tipografias */
     --fuente-titulos: "Montserrat", Arial, sans-serif;
     --fuente-texto: "Open Sans", Arial, sans-serif;
 
@@ -18,8 +18,13 @@
     --espacio-grande: 2rem;
 }
 
+/* === 2. ESTILOS GENERALES === */
 
-/* == 2. ESTILOS GENERALES== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -29,30 +34,22 @@ body {
     line-height: 1.6;
 }
 
-/* Todos los títulos utilizan Montserrat */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
     font-weight: 700;
     color: var(--color-azul-noche);
 }
 
-/* Imágenes adaptables */
-
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
 
-
-/* ===3. ENCABEZADO === */
+/* === 3. ENCABEZADO Y PORTADA === */
 
 header {
+    min-height: 20vh;
     padding: var(--espacio-grande);
     text-align: center;
     background-color: var(--color-azul-noche);
@@ -63,24 +60,23 @@ header h1 {
     color: var(--color-crema);
 }
 
+header > img {
+    width: 20%;
+    margin: 0 auto;
+}
 
-/* ===4. MENÚ DE NAVEGACIÓN== */
-
-/* Lista del menú */
+/* === 4. MENU DE NAVEGACION === */
 
 #menu {
+    margin: var(--espacio-mediano) 0 0;
     padding: 0;
     list-style: none;
 }
-
-/* Elementos de la lista */
 
 #menu li {
     display: inline-block;
     margin: var(--espacio-pequeno);
 }
-
-/* Enlaces del menú */
 
 #menu a {
     display: inline-block;
@@ -90,41 +86,33 @@ header h1 {
     font-weight: 600;
 }
 
-/* Página actual */
-
 #menu a.activo {
     background-color: var(--color-verde-ruta);
-    color: var(--color-crema);
     text-decoration: underline;
 }
-
-/* Cuando pasamos el mouse */
 
 #menu a:hover {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
 
-/* Cuando llegamos al enlace con Tab */
-
-#menu a:focus {
+#menu a:focus,
+main a:focus,
+button:focus {
     outline: 3px solid var(--color-naranja-pedal);
     outline-offset: 3px;
 }
 
-
-/* ==5. CONTENIDO PRINCIPAL=== */
+/* === 5. CONTENIDO PRINCIPAL === */
 
 main {
     width: 90%;
-    max-width: 1000px;
+    max-width: 62rem;
     margin: 0 auto;
     padding: var(--espacio-mediano);
 }
 
-section,
-article,
-aside {
+section, article, aside {
     margin-bottom: var(--espacio-grande);
 }
 
@@ -132,84 +120,84 @@ p {
     margin-bottom: var(--espacio-mediano);
 }
 
+/* === 6. TARJETAS DE SERVICIOS === */
 
-/* ===6. ENLACES DEL CONTENIDO=== */
+.contenedor-servicios {
+    width: 100%;
+}
+
+.tarjeta-servicio {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: var(--espacio-grande);
+    padding: var(--espacio-mediano);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+    vertical-align: top;
+}
+
+.tarjeta-servicio img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: var(--espacio-mediano);
+    border-radius: 0.5rem;
+}
+
+/* === 7. ENLACES Y BOTON DE RESERVA === */
 
 main a {
     color: var(--color-verde-ruta);
     font-weight: 600;
 }
 
-/* Mouse */
-
 main a:hover {
     color: var(--color-azul-noche);
 }
 
-/* Teclado */
-
-main a:focus {
-    outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 3px;
-}
-
-
-/* ===7. BOTÓN RESERVAR AHORA=== */
-
 .boton-reserva {
     display: inline-block;
     padding: var(--espacio-mediano);
+    border-radius: 5px;
     background-color: var(--color-verde-ruta);
     color: var(--color-crema);
     text-decoration: none;
     font-weight: 600;
-    border-radius: 5px;
 }
-
-/* Mouse */
 
 .boton-reserva:hover {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
 
-/* Teclado */
-
-.boton-reserva:focus {
-    outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 3px;
-}
-
-
-/* ===8. TABLAS DE TARIFAS==== */
+/* === 8. TABLAS DE TARIFAS === */
 
 table {
     width: 100%;
-    border-collapse: collapse;
     margin-bottom: var(--espacio-grande);
+    border-collapse: collapse;
+    background-color: #FFFFFF;
 }
 
-th,
-td {
+th, td {
     padding: var(--espacio-mediano);
     border: 1px solid var(--color-gris-asfalto);
     text-align: left;
 }
-
-/* Encabezados de las tablas */
 
 thead th {
     background-color: var(--color-azul-noche);
     color: var(--color-crema);
 }
 
-
-/* ==== 9. FORMULARIO DE RESERVAS==== */
+/* === 9. FORMULARIO DE RESERVAS === */
 
 fieldset {
-    margin-bottom: var(--espacio-grande);
-    padding: var(--espacio-mediano);
+    margin: 0 0 var(--espacio-grande);
+    padding: var(--espacio-grande);
     border: 1px solid var(--color-gris-asfalto);
+    border-radius: 0.5rem;
 }
 
 legend {
@@ -222,73 +210,58 @@ label {
     font-weight: 600;
 }
 
-/* Campos del formulario */
-
-input,
-select,
-textarea {
+input, select, textarea, button {
     font-family: var(--fuente-texto);
     font-size: 1rem;
 }
 
-/* Apariencia de los campos de texto */
-
 input:not([type="radio"]):not([type="checkbox"]),
 select,
 textarea {
+    display: block;
+    width: 100%;
     max-width: 100%;
+    margin-top: var(--espacio-pequeno);
     padding: var(--espacio-pequeno);
     border: 1px solid var(--color-gris-asfalto);
-    background-color: var(--color-crema);
+    background-color: #FFFFFF;
     color: var(--color-azul-noche);
 }
 
-/* Cuando pasamos el mouse por un campo */
-
-input:not([type="radio"]):not([type="checkbox"]):hover,
-select:hover,
-textarea:hover {
+input:hover, select:hover, textarea:hover {
     border-color: var(--color-verde-ruta);
 }
 
-/* Cuando un campo recibe el foco */
-
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
 
+#formulario-reserva form p {
+    margin-bottom: var(--espacio-mediano);
+}
 
-/* ===10. BOTÓN ENVIAR RESERVA=== */
+#formulario-reserva small {
+    display: block;
+    margin-top: var(--espacio-pequeno);
+}
 
 button {
-    padding: var(--espacio-mediano);
+    padding: var(--espacio-mediano) var(--espacio-grande);
+    border: none;
+    border-radius: 5px;
     background-color: var(--color-verde-ruta);
     color: var(--color-crema);
-    border: none;
-    font-family: var(--fuente-texto);
     font-weight: 600;
     cursor: pointer;
 }
-
-/* Mouse */
 
 button:hover {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
 
-/* Teclado */
-
-button:focus {
-    outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 3px;
-}
-
-
-/* ====11. PIE DE PÁGINA === */
+/* === 10. PIE DE PAGINA === */
 
 footer {
     padding: var(--espacio-grande);
@@ -301,31 +274,39 @@ footer a {
     color: var(--color-crema);
 }
 
-/* Mouse en los enlaces del pie */
-
 footer a:hover {
     color: var(--color-naranja-pedal);
 }
 
-
-/* ===12. PANTALLAS PEQUEÑAS=== */
+/* === 11. PANTALLAS PEQUEÑAS === */
 
 @media (max-width: 600px) {
-
     header {
         padding: var(--espacio-mediano);
     }
 
+    header > img {
+        width: 50%;
+    }
+
     main {
-        width: 95%;
+        width: 100%;
+    }
+
+    #menu li {
+        margin: 0.25rem;
     }
 
     table {
         font-size: 0.875rem;
     }
 
-    th,
-    td {
+    th, td {
         padding: var(--espacio-pequeno);
     }
+
+    fieldset {
+        padding: var(--espacio-mediano);
+    }
 }
+
