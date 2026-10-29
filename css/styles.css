@@ -145,6 +145,22 @@ p {
     border-radius: 0.5rem;
 }
 
+.tarjeta-novedad {
+    position: relative;
+}
+.etiqueta-nuevo {
+
+    position: absolute;
+    top: var(--espacio-pequeno);
+    right: var(--espacio-pequeno);
+    padding: var(--espacio-pequeno);
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    border-radius: 0.25rem;
+    font-weight: 600;
+    
+}
+
 /* === 7. ENLACES Y BOTON DE RESERVA === */
 
 main a {
@@ -276,7 +292,16 @@ footer a {
 
 footer a:hover {
     color: var(--color-naranja-pedal);
+
 }
+
+/*===BOTON WHATSAPP==*/
+
+.boton-whatsapp {
+    
+}
+
+
 
 /* === 11. PANTALLAS PEQUEÑAS === */
 
