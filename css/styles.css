@@ -1,24 +1,21 @@
-/* === 1. VARIABLES === */
+/* 1. Variables de colores, fuentes y espacios */
 
 :root {
-    /* Colores oficiales */
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
     --color-azul-noche: #14213D;
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
 
-    /* Tipografias */
     --fuente-titulos: "Montserrat", Arial, sans-serif;
     --fuente-texto: "Open Sans", Arial, sans-serif;
 
-    /* Espaciados */
     --espacio-pequeno: 0.5rem;
     --espacio-mediano: 1rem;
     --espacio-grande: 2rem;
 }
 
-/* === 2. ESTILOS GENERALES === */
+/* 2. Estilos generales */
 
 *,
 *::before,
@@ -36,8 +33,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
-    font-weight: 700;
     color: var(--color-azul-noche);
+}
+
+p {
+    margin-bottom: var(--espacio-mediano);
 }
 
 img {
@@ -46,7 +46,18 @@ img {
     height: auto;
 }
 
-/* === 3. ENCABEZADO Y PORTADA === */
+section, article, aside {
+    margin-bottom: var(--espacio-grande);
+}
+
+main {
+    width: 90%;
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: var(--espacio-mediano);
+}
+
+/* 3. Encabezado y menú */
 
 header {
     min-height: 20vh;
@@ -56,7 +67,8 @@ header {
     color: var(--color-crema);
 }
 
-header h1 {
+header h1,
+header > p {
     color: var(--color-crema);
 }
 
@@ -64,8 +76,6 @@ header > img {
     width: 20%;
     margin: 0 auto;
 }
-
-/* === 4. MENU DE NAVEGACION === */
 
 #menu {
     margin: var(--espacio-mediano) 0 0;
@@ -84,6 +94,7 @@ header > img {
     color: var(--color-crema);
     text-decoration: none;
     font-weight: 600;
+    border-radius: 0.25rem;
 }
 
 #menu a.activo {
@@ -96,31 +107,7 @@ header > img {
     color: var(--color-azul-noche);
 }
 
-#menu a:focus,
-main a:focus,
-button:focus {
-    outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 3px;
-}
-
-/* === 5. CONTENIDO PRINCIPAL === */
-
-main {
-    width: 90%;
-    max-width: 62rem;
-    margin: 0 auto;
-    padding: var(--espacio-mediano);
-}
-
-section, article, aside {
-    margin-bottom: var(--espacio-grande);
-}
-
-p {
-    margin-bottom: var(--espacio-mediano);
-}
-
-/* === 6. TARJETAS DE SERVICIOS === */
+/* 4. Tarjetas de servicios y etiqueta Nuevo */
 
 .contenedor-servicios {
     width: 100%;
@@ -139,8 +126,6 @@ p {
 
 .tarjeta-servicio img {
     width: 100%;
-    max-width: 100%;
-    height: auto;
     margin-bottom: var(--espacio-mediano);
     border-radius: 0.5rem;
 }
@@ -148,8 +133,8 @@ p {
 .tarjeta-novedad {
     position: relative;
 }
-.etiqueta-nuevo {
 
+.etiqueta-nuevo {
     position: absolute;
     top: var(--espacio-pequeno);
     right: var(--espacio-pequeno);
@@ -158,10 +143,10 @@ p {
     color: var(--color-azul-noche);
     border-radius: 0.25rem;
     font-weight: 600;
-    
+    z-index: 1;
 }
 
-/* === 7. ENLACES Y BOTON DE RESERVA === */
+/* 5. Enlaces y botones */
 
 main a {
     color: var(--color-verde-ruta);
@@ -172,22 +157,50 @@ main a:hover {
     color: var(--color-azul-noche);
 }
 
-.boton-reserva {
+.boton-reserva,
+button {
     display: inline-block;
     padding: var(--espacio-mediano);
+    border: none;
     border-radius: 5px;
     background-color: var(--color-verde-ruta);
     color: var(--color-crema);
-    text-decoration: none;
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
     font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.boton-reserva:hover {
+.boton-reserva:hover,
+button:hover {
     background-color: var(--color-naranja-pedal);
     color: var(--color-azul-noche);
 }
 
-/* === 8. TABLAS DE TARIFAS === */
+/* Botón de WhatsApp siempre visible */
+
+.boton-whatsapp {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1000;
+    padding: 0.75rem 1.2rem;
+    border: 2px solid var(--color-azul-noche);
+    border-radius: 2rem;
+    background-color: #25D366;
+    color: var(--color-azul-noche);
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+}
+
+.boton-whatsapp:hover {
+    background-color: #1EBE5D;
+    color: var(--color-azul-noche);
+}
+
+/* 6. Tablas de tarifas */
 
 table {
     width: 100%;
@@ -207,10 +220,10 @@ thead th {
     color: var(--color-crema);
 }
 
-/* === 9. FORMULARIO DE RESERVAS === */
+/* 7. Formulario de reservas */
 
 fieldset {
-    margin: 0 0 var(--espacio-grande);
+    margin-bottom: var(--espacio-grande);
     padding: var(--espacio-grande);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 0.5rem;
@@ -219,14 +232,13 @@ fieldset {
 legend {
     font-family: var(--fuente-titulos);
     font-weight: 700;
-    color: var(--color-azul-noche);
 }
 
 label {
     font-weight: 600;
 }
 
-input, select, textarea, button {
+input, select, textarea {
     font-family: var(--fuente-texto);
     font-size: 1rem;
 }
@@ -248,39 +260,24 @@ input:hover, select:hover, textarea:hover {
     border-color: var(--color-verde-ruta);
 }
 
-input:focus, select:focus, textarea:focus {
-    outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 2px;
-}
-
-#formulario-reserva form p {
-    margin-bottom: var(--espacio-mediano);
-}
-
 #formulario-reserva small {
     display: block;
     margin-top: var(--espacio-pequeno);
 }
 
-button {
-    padding: var(--espacio-mediano) var(--espacio-grande);
-    border: none;
-    border-radius: 5px;
-    background-color: var(--color-verde-ruta);
-    color: var(--color-crema);
-    font-weight: 600;
-    cursor: pointer;
+.opcion-formulario {
+    margin-bottom: var(--espacio-pequeno);
 }
 
-button:hover {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
+.grupo-boton {
+    margin-bottom: var(--espacio-grande);
 }
 
-/* === 10. PIE DE PAGINA === */
+/* 8. Pie de página */
 
 footer {
     padding: var(--espacio-grande);
+    padding-bottom: 6rem;
     text-align: center;
     background-color: var(--color-azul-noche);
     color: var(--color-crema);
@@ -292,18 +289,25 @@ footer a {
 
 footer a:hover {
     color: var(--color-naranja-pedal);
-
 }
 
-/*===BOTON WHATSAPP==*/
+/* 9. Foco para navegar con teclado */
 
-.boton-whatsapp {
-    
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-naranja-pedal);
+    outline-offset: 3px;
 }
 
+.boton-whatsapp:focus-visible {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 4px;
+}
 
-
-/* === 11. PANTALLAS PEQUEÑAS === */
+/* 10. Ajustes para celulares */
 
 @media (max-width: 600px) {
     header {
@@ -322,6 +326,10 @@ footer a:hover {
         margin: 0.25rem;
     }
 
+    #menu a {
+        padding: 0.4rem;
+    }
+
     table {
         font-size: 0.875rem;
     }
@@ -332,6 +340,11 @@ footer a:hover {
 
     fieldset {
         padding: var(--espacio-mediano);
+    }
+
+    .boton-whatsapp {
+        right: 0.75rem;
+        bottom: 0.75rem;
     }
 }
 
