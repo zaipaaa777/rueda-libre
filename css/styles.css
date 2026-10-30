@@ -60,41 +60,57 @@ main {
 /* 3. Encabezado y menú */
 
 header {
-    min-height: 20vh;
+
     padding: var(--espacio-grande);
-    text-align: center;
     background-color: var(--color-azul-noche);
     color: var(--color-crema);
 }
 
-header h1,
-header > p {
+.encabezado-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header h1 {
     color: var(--color-crema);
+    margin: 0;
 }
 
 header > img {
     width: 20%;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
+header > p {
+    text-align: center;
+    color: var(--color-crema);
+}
+
+/* Menú de navegación */
+
 #menu {
-    margin: var(--espacio-mediano) 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    margin: 0;
     padding: 0;
     list-style: none;
 }
 
-#menu li {
-    display: inline-block;
-    margin: var(--espacio-pequeno);
-}
 
 #menu a {
-    display: inline-block;
+
     padding: var(--espacio-pequeno);
     color: var(--color-crema);
     text-decoration: none;
     font-weight: 600;
-    border-radius: 0.25rem;
+    
 }
 
 #menu a.activo {
@@ -107,10 +123,11 @@ header > img {
     color: var(--color-azul-noche);
 }
 
+
 /* 4. Tarjetas de servicios y etiqueta Nuevo */
 
 .contenedor-servicios {
-    width: 100%;
+    width: 80%;
 }
 
 .tarjeta-servicio {

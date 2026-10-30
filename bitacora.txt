@@ -134,11 +134,14 @@ Correcciones
 
     Comprobación de herencia CSS en Rueda Libre.
 
-Propiedad heredada: font-family. Al inspeccionar un párrafo en DevTools, comprobé que utiliza Open Sans, definida en el selector body mediante la variable --fuente-texto.
+Propiedad heredada: font-family. Al inspeccionar un párrafo en DevTools, comprobé que utiliza
+ Open Sans, definida en el selector body mediante la variable --fuente-texto.
 
-Propiedad no heredada: margin. Comprobé que los márgenes no se heredan automáticamente desde body. Los párrafos tienen sus propios márgenes definidos en la hoja de estilos.
+Propiedad no heredada: margin. Comprobé que los márgenes no se heredan automáticamente desde body.
+ Los párrafos tienen sus propios márgenes definidos en la hoja de estilos.
 
-Resultado: La hoja de estilos externa permite mantener los colores y las tipografías de la marca en las tres páginas, utilizando variables CSS y herencia para las propiedades correspondientes.
+Resultado: La hoja de estilos externa permite mantener los colores y las tipografías de la marca 
+en las tres páginas, utilizando variables CSS y herencia para las propiedades correspondientes.
 
 
 
@@ -154,6 +157,75 @@ Medición 2: border-box
 
     Ancho exterior de la tarjeta: 1026 px.
 
+
+
+Aprendizaje de la semana
+
+
+Día 1: Estructura de la página web
+
+El primer día trabajé en la estructura de mi página web Rueda Libre utilizando HTML. Creé la página principal 
+y organicé la información del negocio, agregando las secciones de servicios, ubicación y contacto.
+También agregué imágenes y un menú de navegación para poder pasar de una página a otra. La idea era que los 
+usuarios pudieran conocer el negocio y encontrar fácilmente la información que necesitan.
+
+¿Qué mejoraría?
+
+Me gustaría organizar mejor algunos contenidos y agregar más información sobre los servicios para que las personas
+ conozcan todo lo que ofrece el negocio.
+
+Día 2: Diseño con CSS
+
+El segundo día empecé a trabajar con CSS para darle estilo a mi página. Definí los colores, las tipografías,
+ los espacios y los márgenes para que el sitio tuviera una mejor apariencia.
+También trabajé en el diseño de las tarjetas de servicios y organicé la información de las páginas de tarifas
+ y reservas. En tarifas utilicé tablas para mostrar los precios de las bicicletas y los recorridos, mientras 
+ que en reservas creé un formulario con diferentes campos y validaciones para los datos de los clientes.
+
+¿Qué mejoraría?
+
+Me gustaría mejorar la distribución de las tarjetas y ajustar algunos detalles para que la página se vea mejor en celulares.
+ También quisiera conectar el formulario a un sistema que permita recibir y guardar las reservas.
+
+Día 3: Últimos detalles y revisión
+
+El tercer día trabajé en los últimos detalles de la página. Agregué la etiqueta «Nuevo» a la tarjeta de
+bicicletas eléctricas y configuré el botón de WhatsApp para que permanezca visible en la esquina inferior
+derecha mientras el usuario navega por el sitio.
+También revisé los estilos CSS para que las tres páginas tuvieran un diseño parecido y organicé el código 
+por secciones para que fuera más fácil de entender y modificar.
+Por último, preparé la revisión final del sitio, comprobando los enlaces, las imágenes, el formulario y 
+la navegación con teclado. También revisé los pasos para publicar la versión 1.0 en GitHub Pages.
+
+¿Qué mejoraría?
+
+Me gustaría seguir mejorando el diseño para celulares y revisar que todo funcione correctamente después
+ de publicar la página. También sería bueno implementar un sistema de reservas que permita guardar la 
+ información de los clientes.
+
+Conclusión
+
+Durante estos tres días aprendí a crear una página web con HTML y a darle diseño utilizando CSS.
+ También aprendí a organizar la información en diferentes páginas, crear tablas y formularios, y 
+ utilizar el posicionamiento para ubicar elementos como la etiqueta «Nuevo» y el botón de WhatsApp.
+Considero que el proyecto Rueda Libre me ayudó a comprender mejor cómo se construye una página web 
+y la importancia de revisar los detalles antes de entregarla.
+Aunque todavía hay cosas que se pueden mejorar, como el funcionamiento de las reservas y la adaptación
+ a diferentes dispositivos, me gustaría seguir trabajando en el proyecto para hacerlo más completo y fácil de utilizar.
+
+
+Flexbox
+
+También aprendí a utilizar Flexbox para organizar mejor los elementos de mi página.
+ Lo apliqué en el encabezado para separar el nombre del negocio del menú y en el pie de página para organizar
+  la información en tres bloques. Utilicé propiedades como display: flex, justify-content, align-items, flex-wrap y gap.
+   Al probar diferentes tamaños de pantalla pude observar que los elementos se acomodan cuando hay menos espacio, 
+   evitando que el contenido se salga de su lugar.
+
+¿Qué mejoraría?
+
+Seguiría practicando Flexbox para organizar mejor otras partes de mi página y 
+conseguir que se vea más ordenada tanto en computadores como en celulares.
 
 
 
