@@ -228,6 +228,16 @@ Seguiría practicando Flexbox para organizar mejor otras partes de mi página y
 conseguir que se vea más ordenada tanto en computadores como en celulares.
 
 
+cambio de width wn devtools
+
+Ancho de pantalla |	Columnas observadas
+1280 px	          |         4
+900 px	          |          3
+500 px	          |          1
+
+
+
+
 
 
 
