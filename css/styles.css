@@ -1,3 +1,4 @@
+
 /* 1. Variables de colores, fuentes y espacios */
 
 :root {
@@ -14,6 +15,7 @@
     --espacio-mediano: 1rem;
     --espacio-grande: 2rem;
 }
+
 
 /* 2. Estilos generales */
 
@@ -34,7 +36,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
     color: var(--color-azul-noche);
-    
 }
 
 p {
@@ -52,66 +53,52 @@ section, article, aside {
 }
 
 main {
-    width: 90%;
-    max-width: 62rem;
+    width: 100%;
     margin: 0 auto;
     padding: var(--espacio-mediano);
 }
 
+
 /* 3. Encabezado y menú */
 
 header {
-
-    padding: var(--espacio-grande);
+    padding: var(--espacio-mediano);
     background-color: var(--color-azul-noche);
     color: var(--color-crema);
 }
 
 .encabezado-contenido {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
 }
 
 header h1 {
-    color: var(--color-crema);
     margin: 0;
-}
-
-header > img {
-    width: 20%;
-    margin: 1rem auto;
-}
-
-header > p {
-    text-align: center;
     color: var(--color-crema);
+    text-align: center;
 }
-
-/* Menú de navegación */
 
 #menu {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
 
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-
 #menu a {
-
+    display: block;
     padding: var(--espacio-pequeno);
     color: var(--color-crema);
     text-decoration: none;
     font-weight: 600;
-    
 }
 
 #menu a.activo {
@@ -124,25 +111,66 @@ header > p {
     color: var(--color-azul-noche);
 }
 
+header > img {
+    width: 50%;
+    margin: 1rem auto;
+}
 
-/* 4. Tarjetas de servicios y etiqueta Nuevo */
+header > p {
+    text-align: center;
+    color: var(--color-crema);
+}
+
+
+/* 4. Portada de inicio con Grid */
+
+.portada-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.texto-portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.texto-portada h2,
+.texto-portada p {
+    color: var(--color-crema);
+}
+
+.imagen-portada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-portada img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+/* 5. Tarjetas de servicios */
 
 .contenedor-servicios {
-    width: 80%;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .tarjeta-servicio {
-    display: inline-block;
     width: 100%;
-    margin-bottom: var(--espacio-grande);
+    margin-bottom: var(--espacio-mediano);
     padding: var(--espacio-mediano);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 0.5rem;
     background-color: #FFFFFF;
-    vertical-align: top;
-    
-    
 }
 
 .tarjeta-servicio img {
@@ -164,36 +192,82 @@ header > p {
     color: var(--color-azul-noche);
     border-radius: 0.25rem;
     font-weight: 600;
-    z-index: 1;
 }
 
-/* flota con Grid */
 
-.contenedor-flota { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+/* 6. Flota de bicicletas con Grid y Flexbox */
 
-/* Tarjetas de bicicletas con Flexbox */
-
-.tarjeta-flota { display: flex; flex-direction: column; justify-content: space-between;
-
-padding: var(--espacio-mediano);
-border: 1px solid var(--color-gris-asfalto);
-border-radius: 0.5rem;
-background-color: #FFFFFF;
-
-
+.contenedor-flota {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
-.tarjeta-flota img { width: 100%; height: 180px; object-fit: cover; border-radius: 0.5rem; margin-bottom: var(--espacio-mediano); }
+.tarjeta-flota {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--espacio-mediano);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+}
 
-.tarjeta-flota h3 { margin-top: 0; }
+.tarjeta-flota img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: var(--espacio-mediano);
+}
 
-.tarjeta-flota a { display: inline-block; margin-top: auto; padding: var(--espacio-pequeno); 
-    background-color: var(--color-verde-ruta); color: var(--color-crema); text-align: center; 
-    text-decoration: none; border-radius: 5px; }
+.tarjeta-flota h3 {
+    margin-top: 0;
+}
 
-.tarjeta-flota a:hover { background-color: var(--color-naranja-pedal); color: var(--color-azul-noche); }
+.tarjeta-flota a {
+    display: inline-block;
+    margin-top: auto;
+    padding: var(--espacio-pequeno);
+    background-color: var(--color-verde-ruta);
+    color: var(--color-crema);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
-/* 5. Enlaces y botones */
+.tarjeta-flota a:hover {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+}
+
+
+/* 7. Galería de rutas */
+
+.contenedor-rutas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.tarjeta-ruta {
+    padding: var(--espacio-mediano);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 0.5rem;
+}
+
+.tarjeta-ruta img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.tarjeta-ruta h3 {
+    margin-bottom: var(--espacio-pequeno);
+}
+
+
+/* 8. Enlaces y botones */
 
 main a {
     color: var(--color-verde-ruta);
@@ -225,7 +299,8 @@ button:hover {
     color: var(--color-azul-noche);
 }
 
-/* Botón de WhatsApp siempre visible */
+
+/* 9. Botón de WhatsApp */
 
 .boton-whatsapp {
     position: fixed;
@@ -247,19 +322,23 @@ button:hover {
     color: var(--color-azul-noche);
 }
 
-/* 6. Tablas de tarifas */
+
+/* 10. Tablas de tarifas */
 
 table {
     width: 100%;
     margin-bottom: var(--espacio-grande);
     border-collapse: collapse;
+    table-layout: fixed;
     background-color: #FFFFFF;
+    font-size: 0.68rem;
 }
 
 th, td {
-    padding: var(--espacio-mediano);
+    padding: 0.3rem;
     border: 1px solid var(--color-gris-asfalto);
     text-align: left;
+    overflow-wrap: anywhere;
 }
 
 thead th {
@@ -267,11 +346,25 @@ thead th {
     color: var(--color-crema);
 }
 
-/* 7. Formulario de reservas */
+
+/* 11. Formulario de reservas */
+
+.layout-reservas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.informacion-contacto {
+    padding: var(--espacio-mediano);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 0.5rem;
+}
 
 fieldset {
     margin-bottom: var(--espacio-grande);
-    padding: var(--espacio-grande);
+    padding: var(--espacio-mediano);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 0.5rem;
 }
@@ -316,11 +409,23 @@ input:hover, select:hover, textarea:hover {
     margin-bottom: var(--espacio-pequeno);
 }
 
+.fila-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fila-campos .grupo-formulario {
+    width: 100%;
+    min-width: 0;
+}
+
 .grupo-boton {
     margin-bottom: var(--espacio-grande);
 }
 
-/* 8. Pie de página */
+
+/* 12. Pie de página */
 
 footer {
     padding: var(--espacio-grande);
@@ -328,6 +433,17 @@ footer {
     text-align: center;
     background-color: var(--color-azul-noche);
     color: var(--color-crema);
+}
+
+.pie-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pie-bloque {
+    width: 100%;
 }
 
 footer a {
@@ -338,7 +454,8 @@ footer a:hover {
     color: var(--color-naranja-pedal);
 }
 
-/* 9. Foco para navegar con teclado */
+
+/* 13. Foco para navegar con teclado */
 
 a:focus-visible,
 button:focus-visible,
@@ -354,27 +471,59 @@ textarea:focus-visible {
     outline-offset: 4px;
 }
 
-/* 10. Ajustes para celulares */
 
-@media (max-width: 600px) {
-    header {
-        padding: var(--espacio-mediano);
-    }
+/* 14. Adaptación para tabletas */
 
-    header > img {
-        width: 50%;
-    }
+@media (min-width: 768px) {
 
     main {
-        width: 100%;
+        width: 90%;
     }
 
-    #menu li {
-        margin: 0.25rem;
+    .encabezado-contenido {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    #menu a {
-        padding: 0.4rem;
+    #menu {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .contenedor-servicios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor-flota {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor-rutas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .layout-reservas {
+        grid-template-columns: 2fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .fila-campos {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .fila-campos .grupo-formulario {
+        flex: 1;
+    }
+
+    .pie-contenedor {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .pie-bloque {
+        flex: 1;
     }
 
     table {
@@ -385,165 +534,43 @@ textarea:focus-visible {
         padding: var(--espacio-pequeno);
     }
 
-    fieldset {
-        padding: var(--espacio-mediano);
+}
+
+
+/* 15. Adaptación para escritorio */
+
+@media (min-width: 1200px) {
+
+    main {
+        max-width: 75rem;
     }
-
-    .boton-whatsapp {
-        right: 0.75rem;
-        bottom: 0.75rem;
-    }
-}
-
-
-/* 11. Portada de inicio con Grid */
-
-.portada-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: stretch;
-}
-
-.texto-portada {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.texto-portada h1 {
-    font-size: 2.5rem;
-}
-
-.texto-portada p {
-    color: var(--color-crema);
-}
-
-.imagen-portada {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.imagen-portada img {
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
-
-/* 12. Galería de rutas con Grid */
-
-.contenedor-rutas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-
-.tarjeta-ruta {
-    padding: var(--espacio-mediano);
-    background-color: #FFFFFF;
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 0.5rem;
-}
-
-.tarjeta-ruta img {
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
-.tarjeta-ruta h3 {
-    margin-bottom: var(--espacio-pequeno);
-}
-
-
-/* 13. Distribución de reservas con Grid */
-
-.layout-reservas {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    align-items: start;
-}
-
-.informacion-contacto {
-    padding: var(--espacio-mediano);
-    background-color: #FFFFFF;
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 0.5rem;
-}
-
-
-/* 14. Campos del formulario con Flexbox */
-
-.fila-campos {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.fila-campos .grupo-formulario {
-    flex: 1;
-    min-width: 0;
-}
-
-
-/* 15. Encabezado y pie de página con Flexbox */
-
-.encabezado-contenido {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-.pie-contenedor {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.pie-bloque {
-    flex: 1;
-    min-width: 200px;
-}
-
-
-/* 16. Adaptación para celulares */
-
-@media (max-width: 768px) {
 
     .portada-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .texto-portada {
+        align-items: flex-start;
+        text-align: left;
+        padding: 2rem;
     }
 
     .contenedor-rutas {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contenedor-flota {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contenedor-servicios {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .layout-reservas {
-        grid-template-columns: 1fr;
-    }
-
-    .fila-campos {
-        flex-direction: column;
-    }
-
-    .fila-campos .grupo-formulario {
-        width: 100%;
-    }
-
-    .encabezado-contenido {
-        justify-content: center;
-    }
-
-    .pie-contenedor {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
     }
 
 }
-

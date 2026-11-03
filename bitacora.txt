@@ -257,6 +257,69 @@ la galería y las reservas. Flexbox se utilizó para organizar elementos en una 
 como los campos del formulario, el encabezado y el pie de página.
 
 
+Diseño Responsive Mobile First
+
+
+Objetivo:
+
+Adaptar el sitio web Rueda Libre a dispositivos móviles, tabletas y computadores mediante CSS Mobile First, utilizando Grid, Flexbox y media queries.
+
+
+Encabezado:
+
+En celulares se organizó el nombre del negocio en la parte superior y el menú debajo, utilizando Flexbox con dirección de columna.
+ Desde los 768 px se cambió a una distribución horizontal.
+
+Pie de página:
+
+En celulares los bloques de información se muestran verticalmente. En tabletas
+ y computadores se organizan horizontalmente mediante Flexbox.
+
+Flota de bicicletas:
+
+Se utilizó Grid para organizar las tarjetas. En celulares aparece una columna, en tabletas dos columnas y en escritorio tres columnas.
+
+Decisiones de Grid y Flexbox:
+
+Grid se utilizó para distribuir los elementos en dos dimensiones, como la portada, la galería, la flota y las reservas.
+Flexbox se utilizó para organizar elementos en una dimensión, como el encabezado, el pie de página y los campos del formulario.
+
+Problemas responsive y soluciones
+
+Problema 1: Menú de navegación.
+
+En pantallas pequeñas los elementos del menú quedaban muy juntos y dificultaban la navegación.
+Solución: Se utilizó Flexbox con `flex-direction: column` para organizar los enlaces verticalmente y centrarlos.
+
+Problema 2: Tarjetas de la flota.
+
+Las tarjetas ocupaban demasiado espacio horizontal en dispositivos móviles.
+Solución: Se implementó Grid con una columna para celulares, dos para tabletas y tres para escritorio.
+
+Problema 3: Tablas de tarifas.
+
+El contenido de las tablas podía superar el ancho disponible en pantallas pequeñas.
+Solución: Se redujo el tamaño de letra y el relleno de las celdas, además de utilizar 
+`table-layout: fixed` para distribuir el espacio disponible.
+
+Pruebas realizadas
+
+Se realizaron pruebas utilizando el modo dispositivo de DevTools en los siguientes tamaños:
+
+- 360 px: celular.
+- 768 px: tableta.
+- 1280 px: escritorio.
+
+Se verificó la adaptación de las imágenes, el menú, las tarjetas, las tablas y el formulario.
+
+Conclusión:
+
+Se reorganizaron los estilos del proyecto utilizando el enfoque Mobile First. 
+Se establecieron puntos de interrupción mediante media queries con `min-width`, 
+permitiendo adaptar el contenido a diferentes tamaños de pantalla y mejorar la 
+experiencia de navegación.
+
+
 
 
 
