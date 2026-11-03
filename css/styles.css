@@ -395,3 +395,155 @@ textarea:focus-visible {
     }
 }
 
+
+/* 11. Portada de inicio con Grid */
+
+.portada-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.texto-portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.texto-portada h1 {
+    font-size: 2.5rem;
+}
+
+.texto-portada p {
+    color: var(--color-crema);
+}
+
+.imagen-portada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-portada img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+/* 12. Galería de rutas con Grid */
+
+.contenedor-rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.tarjeta-ruta {
+    padding: var(--espacio-mediano);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 0.5rem;
+}
+
+.tarjeta-ruta img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.tarjeta-ruta h3 {
+    margin-bottom: var(--espacio-pequeno);
+}
+
+
+/* 13. Distribución de reservas con Grid */
+
+.layout-reservas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.informacion-contacto {
+    padding: var(--espacio-mediano);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 0.5rem;
+}
+
+
+/* 14. Campos del formulario con Flexbox */
+
+.fila-campos {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.fila-campos .grupo-formulario {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* 15. Encabezado y pie de página con Flexbox */
+
+.encabezado-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pie-contenedor {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.pie-bloque {
+    flex: 1;
+    min-width: 200px;
+}
+
+
+/* 16. Adaptación para celulares */
+
+@media (max-width: 768px) {
+
+    .portada-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-rutas {
+        grid-template-columns: 1fr;
+    }
+
+    .layout-reservas {
+        grid-template-columns: 1fr;
+    }
+
+    .fila-campos {
+        flex-direction: column;
+    }
+
+    .fila-campos .grupo-formulario {
+        width: 100%;
+    }
+
+    .encabezado-contenido {
+        justify-content: center;
+    }
+
+    .pie-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+

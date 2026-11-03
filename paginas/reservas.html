@@ -20,26 +20,42 @@
 
 <body>
 
-    <header class="portada">
+    <header class="portada portada-inicio">
 
         <div class="encabezado-contenido">
 
-            <h1>Rueda Libre</h1>
-
             <nav aria-label="Navegación principal">
                 <ul id="menu">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="tarifas.html">Tarifas y rutas</a></li>
-                    <li><a href="reservas.html"class="activo" aria-current="page">Reservar</a></li>
+                    <li><a href="../index.html" >Inicio</a></li>
+                    <li><a href="../paginas/tarifas.html">Tarifas y rutas</a></li>
+                    <li><a href="../paginas/reservas.html"class="activo" aria-current="page">Reservar</a></li>
                     <li><a href="../#encuentranos">Encuéntranos</a></li>
                 </ul>
             </nav>
 
         </div>
 
-        <img src="../imagenes/portada.jpg" alt="Portada de Rueda Libre">
+        <div class="portada-grid">
 
-        <p>¡Bienvenido a Rueda Libre! El mejor negocio de alquiler de bicicletas en Medellín.</p>
+            <div class="texto-portada">
+                <h1>Rueda Libre</h1>
+
+                <p>
+                    ¡Bienvenido a Rueda Libre!
+                    El mejor negocio de alquiler de bicicletas en Medellín.
+                    Descubre nuevos lugares y disfruta de la ciudad sobre ruedas.
+                </p>
+
+                <a href="paginas/reservas.html" class="boton-reserva">
+                    Reservar ahora
+                </a>
+            </div>
+
+            <div class="imagen-portada">
+                <img src="../imagenes/portada.jpg" alt="Portada de Rueda Libre">
+            </div>
+
+        </div>
 
     </header>
 
@@ -47,293 +63,307 @@
 
     <main>
 
-        <section id="contacto-reservas">
+        <div class="layout-reservas"></div>
 
-            <h2>Contacto para reservas</h2>
 
-            <p>
-                Puedes contactarte con nosotros para reservar
-                mediante el correo:
-            </p>
+            <section id="formulario-reserva">
 
-            <p>
-                <a href="mailto:hola@ruedalibre.example">
-                    hola@ruedalibre.example
-                </a>
-            </p>
+                <h2>Formulario de reserva</h2>
 
-        </section>
+                <p>
+                    Completa los siguientes datos para solicitar
+                    el alquiler de tu bicicleta.
+                </p>
 
-        <section id="formulario-reserva">
+                <form action="#" method="post">
 
-            <h2>Formulario de reserva</h2>
+                    <fieldset>
 
-            <p>
-                Completa los siguientes datos para solicitar
-                el alquiler de tu bicicleta.
-            </p>
+                        <legend>Tus datos</legend>
 
-            <form action="#" method="post">
+                        <div class="grupo-formulario">
 
-                <fieldset>
-
-                    <legend>Tus datos</legend>
-
-                    <div class="grupo-formulario">
-
-                        <label for="nombre">Nombre completo:</label>
-
-                        <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            minlength="3"
-                            autocomplete="name"
-                            required>
-
-                    </div>
-
-                    <div class="grupo-formulario">
-
-                        <label for="documento">Número de documento:</label>
-
-                        <input
-                            type="text"
-                            id="documento"
-                            name="documento"
-                            inputmode="numeric"
-                            pattern="[0-9]{6,10}"
-                            title="Ingresa únicamente números, entre 6 y 10 dígitos."
-                            aria-describedby="ayuda-documento"
-                            required>
-
-                        <small id="ayuda-documento">
-                            Debe contener entre 6 y 10 números,
-                            sin espacios ni letras.
-                        </small>
-
-                    </div>
-
-                    <div class="grupo-formulario">
-
-                        <label for="correo">Correo electrónico:</label>
-
-                        <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            autocomplete="email"
-                            required>
-
-                    </div>
-
-                    <div class="grupo-formulario">
-
-                        <label for="celular">Celular:</label>
-
-                        <input
-                            type="tel"
-                            id="celular"
-                            name="celular"
-                            inputmode="numeric"
-                            pattern="3[0-9]{9}"
-                            title="Ingresa 10 dígitos. El número debe comenzar por 3."
-                            aria-describedby="ayuda-celular"
-                            autocomplete="tel"
-                            required>
-
-                        <small id="ayuda-celular">
-                            Debe tener 10 dígitos y comenzar por 3.
-                            Ejemplo: 3001234567.
-                        </small>
-
-                    </div>
-
-                </fieldset>
-
-                <fieldset>
-
-                    <legend>Tu alquiler</legend>
-
-                    <div class="grupo-formulario">
-
-                        <label for="fecha">Fecha del alquiler:</label>
-
-                        <input
-                            type="date"
-                            id="fecha"
-                            name="fecha"
-                            min="2026-11-01"
-                            max="2026-12-31"
-                            required>
-
-                        <small>
-                            Selecciona una fecha entre el 1 de noviembre
-                            y el 31 de diciembre de 2026.
-                        </small>
-
-                    </div>
-
-                    <div class="grupo-formulario">
-
-                        <p class="titulo-opciones">Tipo de bicicleta:</p>
-
-                        <div class="opcion-formulario">
+                            <label for="nombre">Nombre completo:</label>
 
                             <input
-                                type="radio"
-                                id="urbana"
-                                name="tipo_bicicleta"
-                                value="urbana"
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                minlength="3"
+                                autocomplete="name"
                                 required>
 
-                            <label for="urbana">Urbana</label>
+                        </div>
+
+                        <div class="fila-campos">
+
+                            <div class="grupo-formulario">
+
+                                <label for="documento">Número de documento:</label>
+
+                                <input
+                                    type="text"
+                                    id="documento"
+                                    name="documento"
+                                    inputmode="numeric"
+                                    pattern="[0-9]{6,10}"
+                                    title="Ingresa únicamente números, entre 6 y 10 dígitos."
+                                    aria-describedby="ayuda-documento"
+                                    required>
+
+                                <small id="ayuda-documento">
+                                    Debe contener entre 6 y 10 números,
+                                    sin espacios ni letras.
+                                </small>
+
+                            </div>
+
+                            <div class="grupo-formulario">
+
+                                <label for="celular">Celular:</label>
+
+                                <input
+                                    type="tel"
+                                    id="celular"
+                                    name="celular"
+                                    inputmode="numeric"
+                                    pattern="3[0-9]{9}"
+                                    title="Ingresa 10 dígitos. El número debe comenzar por 3."
+                                    aria-describedby="ayuda-celular"
+                                    autocomplete="tel"
+                                    required>
+
+                                <small id="ayuda-celular">
+                                    Debe tener 10 dígitos y comenzar por 3.
+                                    Ejemplo: 3001234567.
+                                </small>
+
+                            </div>
 
                         </div>
+
+                        <div class="grupo-formulario">
+
+                            <label for="correo">Correo electrónico:</label>
+
+                            <input
+                                type="email"
+                                id="correo"
+                                name="correo"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+
+                    </fieldset>
+
+                    <fieldset>
+
+                        <legend>Tu alquiler</legend>
+
+                        <div class="grupo-formulario">
+
+                            <label for="fecha">Fecha del alquiler:</label>
+
+                            <input
+                                type="date"
+                                id="fecha"
+                                name="fecha"
+                                min="2026-11-01"
+                                max="2026-12-31"
+                                required>
+
+                            <small>
+                                Selecciona una fecha entre el 1 de noviembre
+                                y el 31 de diciembre de 2026.
+                            </small>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <p class="titulo-opciones">Tipo de bicicleta:</p>
+
+                            <div class="opcion-formulario">
+
+                                <input
+                                    type="radio"
+                                    id="urbana"
+                                    name="tipo_bicicleta"
+                                    value="urbana"
+                                    required>
+
+                                <label for="urbana">Urbana</label>
+
+                            </div>
+
+                            <div class="opcion-formulario">
+
+                                <input
+                                    type="radio"
+                                    id="montana"
+                                    name="tipo_bicicleta"
+                                    value="montana">
+
+                                <label for="montana">Montaña</label>
+
+                            </div>
+
+                            <div class="opcion-formulario">
+
+                                <input
+                                    type="radio"
+                                    id="electrica"
+                                    name="tipo_bicicleta"
+                                    value="electrica">
+
+                                <label for="electrica">Eléctrica</label>
+
+                            </div>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <label for="plan">Plan de alquiler:</label>
+
+                            <select id="plan" name="plan" required>
+
+                                <option value="">Selecciona un plan</option>
+                                <option value="1_hora">1 hora</option>
+                                <option value="medio_dia">Medio día</option>
+                                <option value="dia_completo">Día completo</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <label for="cantidad">Cantidad de bicicletas:</label>
+
+                            <input
+                                type="number"
+                                id="cantidad"
+                                name="cantidad"
+                                min="1"
+                                max="6"
+                                step="1"
+                                value="1"
+                                required>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <label for="recorrido">Recorrido guiado:</label>
+
+                            <select id="recorrido" name="recorrido">
+
+                                <option value="ninguno">Ninguno</option>
+                                <option value="rio_parques">Río y parques</option>
+                                <option value="sabores_barrio">Sabores de barrio</option>
+                                <option value="reto_palmas">Reto Las Palmas</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="grupo-formulario">
+
+                            <label for="comentarios">
+                                Comentarios adicionales (opcional):
+                            </label>
+
+                            <textarea
+                                id="comentarios"
+                                name="comentarios"
+                                rows="5"
+                                maxlength="300"
+                                aria-describedby="ayuda-comentarios"
+                                placeholder="Escribe aquí tus comentarios"></textarea>
+
+                            <small id="ayuda-comentarios">
+                                Máximo 300 caracteres.
+                            </small>
+
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>
+
+                        <legend>Confirmación</legend>
 
                         <div class="opcion-formulario">
 
                             <input
-                                type="radio"
-                                id="montana"
-                                name="tipo_bicicleta"
-                                value="montana">
+                                type="checkbox"
+                                id="politicas"
+                                name="politicas"
+                                value="aceptadas"
+                                required>
 
-                            <label for="montana">Montaña</label>
-
-                        </div>
-
-                        <div class="opcion-formulario">
-
-                            <input
-                                type="radio"
-                                id="electrica"
-                                name="tipo_bicicleta"
-                                value="electrica">
-
-                            <label for="electrica">Eléctrica</label>
+                            <label for="politicas">
+                                Acepto las políticas de alquiler.
+                            </label>
 
                         </div>
 
-                    </div>
+                    </fieldset>
 
-                    <div class="grupo-formulario">
+                    <div class="grupo-boton">
 
-                        <label for="plan">Plan de alquiler:</label>
-
-                        <select id="plan" name="plan" required>
-
-                            <option value="">Selecciona un plan</option>
-                            <option value="1_hora">1 hora</option>
-                            <option value="medio_dia">Medio día</option>
-                            <option value="dia_completo">Día completo</option>
-
-                        </select>
+                        <button type="submit">Enviar reserva</button>
 
                     </div>
 
-                    <div class="grupo-formulario">
+                </form>
 
-                        <label for="cantidad">Cantidad de bicicletas:</label>
+            </section>
 
-                        <input
-                            type="number"
-                            id="cantidad"
-                            name="cantidad"
-                            min="1"
-                            max="6"
-                            step="1"
-                            value="1"
-                            required>
+            <aside class="informacion-contacto">
 
-                    </div>
+                <section id="contacto-reservas">
 
-                    <div class="grupo-formulario">
+                    <h2>Contacto para reservas</h2>
 
-                        <label for="recorrido">Recorrido guiado:</label>
+                    <p>
+                        Puedes contactarte con nosotros para reservar
+                        mediante el correo:
+                    </p>
 
-                        <select id="recorrido" name="recorrido">
+                    <p>
+                        <a href="mailto:hola@ruedalibre.example">
+                            hola@ruedalibre.example
+                        </a>
+                    </p>
 
-                            <option value="ninguno">Ninguno</option>
-                            <option value="rio_parques">Río y parques</option>
-                            <option value="sabores_barrio">Sabores de barrio</option>
-                            <option value="reto_palmas">Reto Las Palmas</option>
+                </section>
 
-                        </select>
+                <section id="horarios-atencion">
 
-                    </div>
+                    <h2>Horarios de atención</h2>
 
-                    <div class="grupo-formulario">
+                    <dl>
 
-                        <label for="comentarios">
-                            Comentarios adicionales (opcional):
-                        </label>
+                        <dt>Lunes a viernes</dt>
+                        <dd>7:00 a. m. - 7:00 p. m.</dd>
 
-                        <textarea
-                            id="comentarios"
-                            name="comentarios"
-                            rows="5"
-                            maxlength="300"
-                            aria-describedby="ayuda-comentarios"
-                            placeholder="Escribe aquí tus comentarios"></textarea>
+                        <dt>Sábados y domingos</dt>
+                        <dd>6:00 a. m. - 2:00 p. m.</dd>
 
-                        <small id="ayuda-comentarios">
-                            Máximo 300 caracteres.
-                        </small>
+                        <dt>Festivos</dt>
+                        <dd>6:00 a. m. - 2:00 p. m.</dd>
 
-                    </div>
+                    </dl>
 
-                </fieldset>
+                </section>
 
-                <fieldset>
+         </aside>
 
-                    <legend>Confirmación</legend>
-
-                    <div class="opcion-formulario">
-
-                        <input
-                            type="checkbox"
-                            id="politicas"
-                            name="politicas"
-                            value="aceptadas"
-                            required>
-
-                        <label for="politicas">
-                            Acepto las políticas de alquiler.
-                        </label>
-
-                    </div>
-
-                </fieldset>
-
-                <div class="grupo-boton">
-
-                    <button type="submit">Enviar reserva</button>
-
-                </div>
-
-            </form>
-
-        </section>
-
-        <aside id="horarios-atencion">
-
-            <h2>Horarios de atención</h2>
-
-            <dl>
-
-                <dt>Lunes a viernes</dt>
-                <dd>7:00 a. m. - 7:00 p. m.</dd>
-
-                <dt>Sábados y domingos</dt>
-                <dd>6:00 a. m. - 2:00 p. m.</dd>
-
-                <dt>Festivos</dt>
-                <dd>6:00 a. m. - 2:00 p. m.</dd>
-
-            </dl>
-
-        </aside>
+        </div>
 
     </main>
 

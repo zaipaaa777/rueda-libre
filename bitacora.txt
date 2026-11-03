@@ -238,6 +238,24 @@ Ancho de pantalla |	Columnas observadas
 
 
 
+| Caso Herramienta utilizada y Justificación 
+
+|-
+| Portada | Grid | Permite dividir el encabezado en dos columnas independientes usando unidades `fr`. 
+| Galería de rutas | Grid | Permite organizar tres tarjetas en columnas iguales y mantener espacios uniformes con `gap`. 
+| Reservas | Grid | Permite distribuir el formulario y la información de contacto en proporción 2:1. 
+| Fila del formulario | Flexbox | Permite ubicar documento y celular en una misma fila mediante `align-items` y `gap`. 
+| Encabezado | Flexbox | Permite distribuir los elementos del menú horizontalmente con `justify-content`. |
+| Pie de página | Flexbox | Permite organizar los bloques de información horizontalmente y adaptarlos con `flex-wrap`. 
+
+
+Conclusión para la bitácora:
+
+Se utilizaron Grid y Flexbox de acuerdo con las necesidades de cada sección. 
+Grid se implementó en distribuciones de dos dimensiones, como las columnas de la portada,
+la galería y las reservas. Flexbox se utilizó para organizar elementos en una sola dimensión, 
+como los campos del formulario, el encabezado y el pie de página.
+
 
 
 
