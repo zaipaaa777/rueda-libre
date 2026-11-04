@@ -320,6 +320,43 @@ permitiendo adaptar el contenido a diferentes tamaños de pantalla y mejorar la
 experiencia de navegación.
 
 
+Bootstrap
+
+Me demore aproximadamente una media hora para reconstruir las tarjetas de flotas en Bootstrap
+
+Numero de lineas CSS: 80 LINEAS DE CODIGO
+Numero de lineas en Boostrap:30 LINEAS DE CODIGO
+
+lo que se me dificulto un poco son las clases de las cuales no tengo conocimiento.
+
+Me facilito mucho ya que es un poco mas sencillo darle estilo a una pagina web.
+
+Que clases utilizamos?
+
+- container: centra el contenido .
+- row: organiza las tarjetas en filas.
+- g-4: agrega espacios entre las tarjetas.
+- col-12: una tarjeta por fila.
+- col-sm-6: dos tarjetas por fila desde el tamaño sm.
+- col-lg-4: tres tarjetas por fila desde lg.
+- col-xl-3: cuatro tarjetas por fila desde xl.
+
+- card: crea el diseño de tarjeta.
+- h-100: hace que las tarjetas ocupen toda la altura disponible.
+- card-img-top: adapta la imagen a la parte superior de la tarjeta.
+- img-fluid: hace que la imagen sea adaptable.
+- card-body: contiene el contenido de la tarjeta.
+- card-title: aplica estilo al título.
+- card-text: aplica estilo a la descripción.
+
+- btn: da formato de botón al enlace.
+- btn-success: aplica el color verde.
+- d-flex: activa Flexbox.
+- flex-column: organiza el contenido verticalmente.
+- mt-auto: empuja el botón hacia la parte inferior.
+
+
+
 
 
 
