@@ -356,6 +356,26 @@ Que clases utilizamos?
 - mt-auto: empuja el botón hacia la parte inferior.
 
 
+Seccion con clases utilitarias de Boostrap
+
+Clase	        |      Función
+flex-md-row	    |      Organiza los elementos en fila desde pantallas medianas.
+d-none	        |      Oculta un elemento.
+d-md-block	    |      Muestra un elemento desde pantallas medianas.
+gap-3	        |      Agrega separación entre elementos.
+text-bg-success	|      Aplica un fondo verde y un color de texto que contrasta.
+
+
+-Se construyó la sección de beneficios y la franja de llamada a la acción utilizando únicamente
+clases utilitarias de Bootstrap 5.3, sin escribir CSS propio.
+
+-Se aplicaron herramientas de espaciado, colores, tipografía, grillas y Flexbox para 
+conseguir un diseño adaptable a diferentes tamaños de pantalla.
+
+-Bootstrap permitió ahorrar tiempo y simplificar el código, aunque algunas 
+decisiones de diseño quedaron limitadas a las opciones que ofrece el framework.
+
+
 
 
 
