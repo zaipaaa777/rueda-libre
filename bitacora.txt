@@ -377,6 +377,43 @@ decisiones de diseño quedaron limitadas a las opciones que ofrece el framework.
 
 
 
+RUEDA LIBRE V2.0
+
+ Cambios realizados
+
+    Inicio: revisé la estructura y el funcionamiento responsive de la página.
+    Tarifas: organicé las tablas y la información adicional en dos columnas utilizando Bootstrap (col-lg-8 y col-lg-4).
+    Reservas: distribuí el formulario y la información de contacto en columnas 8/4 desde dispositivos medianos.
+    Formulario: conservé todas las validaciones nativas de HTML5.
+    CSS: eliminé reglas de distribución que ahora resuelve Bootstrap y conservé colores, tipografías, botones, tarjetas y tablas.
+    Catálogo: creé pruebas/catalogo-bootstrap.html para probar la flota de bicicletas y los beneficios utilizando Bootstrap.
+
+
+Ventajas y desventajas
+
+Ventajas:
+
+    Menos código CSS para organizar los elementos.
+    Mayor facilidad para distribuir columnas.
+    Mejor adaptación a diferentes pantallas.
+    Desarrollo más organizado y reutilizable.
+
+Desventajas:
+
+    Necesité aprender y aplicar correctamente las clases de Bootstrap.
+    Algunos estilos personalizados generaron conflictos con el framework.
+    Fue necesario conservar CSS propio para mantener la identidad visual.
+
+Conclusión
+
+Con esta migración comprobé que Bootstrap facilita el desarrollo de páginas
+ responsive y reduce la necesidad de escribir CSS para organizar los contenidos.
+  Aunque tuve que realizar algunos ajustes por conflictos de estilos, considero 
+  que fue una mejora para el proyecto, porque conseguí una estructura más organizada 
+  y fácil de mantener.
+
+
+
 
 
 

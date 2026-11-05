@@ -1,5 +1,5 @@
 
-/* 1. Variables de colores, fuentes y espacios */
+/* 1. Variables de colores */
 
 :root {
     --color-verde-ruta: #1E7A4F;
@@ -53,9 +53,7 @@ section, aside {
 }
 
 main {
-    width: 100%;
     margin: 0 auto;
-    padding: var(--espacio-mediano);
 }
 
 
@@ -67,13 +65,7 @@ header {
     color: var(--color-crema);
 }
 
-.encabezado-contenido {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
+
 
 header h1 {
     margin: 0;
@@ -114,20 +106,7 @@ header > p {
 
 /* 4. Portada de inicio con Grid */
 
-.portada-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
 
-.texto-portada {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-}
 
 .texto-portada h2,
 .texto-portada p {
@@ -247,11 +226,7 @@ thead th {
 
 /* 11. Formulario de reservas */
 
-.layout-reservas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
+
 
 .informacion-contacto {
     padding: var(--espacio-mediano);
@@ -307,16 +282,7 @@ input:hover, select:hover, textarea:hover {
     margin-bottom: var(--espacio-pequeno);
 }
 
-.fila-campos {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
 
-.fila-campos .grupo-formulario {
-    width: 100%;
-    min-width: 0;
-}
 
 .grupo-boton {
     margin-bottom: var(--espacio-grande);
@@ -370,27 +336,12 @@ textarea:focus-visible {
 }
 
 
-/* 14. Adaptación para tabletas */
+/* 14. Adaptación para tablets */
 
 @media (min-width: 768px) {
 
     main {
         width: 90%;
-    }
-
-
-    .layout-reservas {
-        grid-template-columns: 2fr 1fr;
-        gap: 1.5rem;
-    }
-
-    .fila-campos {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .fila-campos .grupo-formulario {
-        flex: 1;
     }
 
     .pie-contenedor {
@@ -414,7 +365,7 @@ textarea:focus-visible {
 }
 
 
-/* 15. Adaptación para escritorio */
+/* 15. Adaptación para pc*/
 
 @media (min-width: 1200px) {
 
@@ -422,9 +373,6 @@ textarea:focus-visible {
         max-width: 75rem;
     }
 
-    .layout-reservas {
-        grid-template-columns: 2fr 1fr;
-        gap: 2rem;
-    }
+   
 
 }
