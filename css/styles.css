@@ -142,26 +142,7 @@ main a:hover {
     color: var(--color-azul-noche);
 }
 
-.boton-reserva,
-button {
-    display: inline-block;
-    padding: var(--espacio-mediano);
-    border: none;
-    border-radius: 5px;
-    background-color: var(--color-verde-ruta);
-    color: var(--color-crema);
-    font-family: var(--fuente-texto);
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-}
 
-.boton-reserva:hover,
-button:hover {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-}
 
 
 /* 9. Botón de WhatsApp */

@@ -48,7 +48,7 @@
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a class="nav-link"  href="../index.html">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="../paginas/tarifas.html">Tarifas y rutas</a></li>
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="../paginas/reservas.html">Reservar</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="reservas.html">Reservar</a></li>
                             <li class="nav-item"><a class="nav-link" href="../#encuentranos">Encuéntranos</a></li>
                         </ul>
                     </div>
@@ -96,258 +96,180 @@
         <div class="row g-4">
 
 
-            <section id="formulario-reserva" class="col-12 col-md-8 ">
+            <section id="formulario-reserva" class="col-12 col-md-8">
 
-                <h2>Formulario de reserva</h2>
+            <h2>Formulario de reserva</h2>
 
-                <p>
-                    Completa los siguientes datos para solicitar
-                    el alquiler de tu bicicleta.
-                </p>
+            
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong>No olvides traer tu documento de identidad original.</strong>
+                Lo necesitamos para entregarte la bicicleta.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                        aria-label="Cerrar aviso"></button>
+            </div>
 
-                <form action="#" method="post">
+            <p>Completa los siguientes datos para solicitar el alquiler de tu bicicleta.</p>
 
-                    <fieldset>
+            <form action="#" method="post" class="needs-validation" novalidate>
 
-                        <legend>Tus datos</legend>
+                <fieldset class="border rounded p-3 mb-4">
+                    <legend class="fs-5 fw-bold">Tus datos</legend>
 
-                        <div class="grupo-formulario">
-
-                            <label for="nombre">Nombre completo:</label>
-
-                            <input
-                                type="text"
-                                id="nombre"
-                                name="nombre"
-                                minlength="3"
-                                autocomplete="name"
-                                required>
-
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre completo:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            minlength="3" autocomplete="name" required>
+                        <div class="invalid-feedback">
+                            Escribe tu nombre completo (mínimo 3 letras).
                         </div>
-
-                        <div class="row g-3">
-
-                            <div class="grupo-formulario col-12 col-md-6">
-
-                                <label for="documento">Número de documento:</label>
-
-                                <input
-                                    type="text"
-                                    id="documento"
-                                    name="documento"
-                                    inputmode="numeric"
-                                    pattern="[0-9]{6,10}"
-                                    title="Ingresa únicamente números, entre 6 y 10 dígitos."
-                                    aria-describedby="ayuda-documento"
-                                    required>
-
-                                <small id="ayuda-documento">
-                                    Debe contener entre 6 y 10 números,
-                                    sin espacios ni letras.
-                                </small>
-
-                            </div>
-
-                            <div class="grupo-formulario col-12 col-md-6">
-
-                                <label for="celular">Celular:</label>
-
-                                <input
-                                    type="tel"
-                                    id="celular"
-                                    name="celular"
-                                    inputmode="numeric"
-                                    pattern="3[0-9]{9}"
-                                    title="Ingresa 10 dígitos. El número debe comenzar por 3."
-                                    aria-describedby="ayuda-celular"
-                                    autocomplete="tel"
-                                    required>
-
-                                <small id="ayuda-celular">
-                                    Debe tener 10 dígitos y comenzar por 3.
-                                    Ejemplo: 3001234567.
-                                </small>
-
-                            </div>
-
-                        </div>
-
-                        <div class="grupo-formulario">
-
-                            <label for="correo">Correo electrónico:</label>
-
-                            <input
-                                type="email"
-                                id="correo"
-                                name="correo"
-                                autocomplete="email"
-                                required>
-
-                        </div>
-
-
-                    </fieldset>
-
-                    <fieldset>
-
-                        <legend>Tu alquiler</legend>
-
-                        <div class="grupo-formulario">
-
-                            <label for="fecha">Fecha del alquiler:</label>
-
-                            <input
-                                type="date"
-                                id="fecha"
-                                name="fecha"
-                                min="2026-11-01"
-                                max="2026-12-31"
-                                required>
-
-                            <small>
-                                Selecciona una fecha entre el 1 de noviembre
-                                y el 31 de diciembre de 2026.
-                            </small>
-
-                        </div>
-
-                        <div class="grupo-formulario">
-
-                            <p class="titulo-opciones">Tipo de bicicleta:</p>
-
-                            <div class="opcion-formulario">
-
-                                <input
-                                    type="radio"
-                                    id="urbana"
-                                    name="tipo_bicicleta"
-                                    value="urbana"
-                                    required>
-
-                                <label for="urbana">Urbana</label>
-
-                            </div>
-
-                            <div class="opcion-formulario">
-
-                                <input
-                                    type="radio"
-                                    id="montana"
-                                    name="tipo_bicicleta"
-                                    value="montana">
-
-                                <label for="montana">Montaña</label>
-
-                            </div>
-
-                            <div class="opcion-formulario">
-
-                                <input
-                                    type="radio"
-                                    id="electrica"
-                                    name="tipo_bicicleta"
-                                    value="electrica">
-
-                                <label for="electrica">Eléctrica</label>
-
-                            </div>
-
-                        </div>
-
-                        <div class="grupo-formulario">
-
-                            <label for="plan">Plan de alquiler:</label>
-
-                            <select id="plan" name="plan" required>
-
-                                <option value="">Selecciona un plan</option>
-                                <option value="1_hora">1 hora</option>
-                                <option value="medio_dia">Medio día</option>
-                                <option value="dia_completo">Día completo</option>
-
-                            </select>
-
-                        </div>
-
-                        <div class="grupo-formulario">
-
-                            <label for="cantidad">Cantidad de bicicletas:</label>
-
-                            <input
-                                type="number"
-                                id="cantidad"
-                                name="cantidad"
-                                min="1"
-                                max="6"
-                                step="1"
-                                value="1"
-                                required>
-
-                        </div>
-
-                        <div class="grupo-formulario">
-
-                            <label for="recorrido">Recorrido guiado:</label>
-
-                            <select id="recorrido" name="recorrido">
-
-                                <option value="ninguno">Ninguno</option>
-                                <option value="rio_parques">Río y parques</option>
-                                <option value="sabores_barrio">Sabores de barrio</option>
-                                <option value="reto_palmas">Reto Las Palmas</option>
-
-                            </select>
-
-                        </div>
-
-                        <div class="grupo-formulario">
-
-                            <label for="comentarios">
-                                Comentarios adicionales (opcional):
-                            </label>
-
-                            <textarea
-                                id="comentarios"
-                                name="comentarios"
-                                rows="5"
-                                maxlength="300"
-                                aria-describedby="ayuda-comentarios"
-                                placeholder="Escribe aquí tus comentarios"></textarea>
-
-                            <small id="ayuda-comentarios">
-                                Máximo 300 caracteres.
-                            </small>
-
-                        </div>
-
-                    </fieldset>
-
-                    <fieldset>
-
-                        <legend>Confirmación</legend>
-
-                        <div class="opcion-formulario">
-
-                            <input
-                                type="checkbox"
-                                id="politicas"
-                                name="politicas"
-                                value="aceptadas"
-                                required>
-
-                            <label for="politicas">
-                                Acepto las políticas de alquiler.
-                            </label>
-
-                        </div>
-
-                    </fieldset>
-
-                    <div class="grupo-boton">
-
-                        <button type="submit">Enviar reserva</button>
-
                     </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label for="documento" class="form-label">Número de documento:</label>
+                            <input type="text" class="form-control" id="documento" name="documento"
+                                inputmode="numeric" pattern="[0-9]{6,10}"
+                                title="Ingresa únicamente números, entre 6 y 10 dígitos."
+                                aria-describedby="ayuda-documento" required>
+                            <div class="invalid-feedback">
+                                Escribe solo números, entre 6 y 10 dígitos, sin espacios ni letras.
+                            </div>
+                            <small id="ayuda-documento" class="form-text">
+                                Debe contener entre 6 y 10 números.
+                            </small>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="celular" class="form-label">Celular:</label>
+                            <input type="tel" class="form-control" id="celular" name="celular"
+                                inputmode="numeric" pattern="3[0-9]{9}"
+                                title="Ingresa 10 dígitos. El número debe comenzar por 3."
+                                aria-describedby="ayuda-celular" autocomplete="tel" required>
+                            <div class="invalid-feedback">
+                                Escribe 10 dígitos que empiecen por 3, por ejemplo 3001234567.
+                            </div>
+                            <small id="ayuda-celular" class="form-text">
+                                Debe tener 10 dígitos y comenzar por 3.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="correo" name="correo"
+                            autocomplete="email" required>
+                        <div class="invalid-feedback">
+                            Escribe un correo válido, por ejemplo nombre@correo.com.
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 mb-4">
+                    <legend class="fs-5 fw-bold">Tu alquiler</legend>
+
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha del alquiler:</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha"
+                            min="2026-11-01" max="2026-12-31"
+                            aria-describedby="ayuda-fecha" required>
+                        <div class="invalid-feedback">
+                            Elige una fecha entre el 1 de noviembre y el 31 de diciembre de 2026.
+                        </div>
+                        <small id="ayuda-fecha" class="form-text">
+                            Disponible del 1 de noviembre al 31 de diciembre de 2026.
+                        </small>
+                    </div>
+
+                    <div class="mb-3">
+                        <p class="mb-2 fw-semibold">Tipo de bicicleta:</p>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="urbana"
+                                name="tipo_bicicleta" value="urbana" required>
+                            <label class="form-check-label" for="urbana">Urbana</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="montana"
+                                name="tipo_bicicleta" value="montana" required>
+                            <label class="form-check-label" for="montana">Montaña</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="electrica"
+                                name="tipo_bicicleta" value="electrica" required>
+                            <label class="form-check-label" for="electrica">Eléctrica</label>
+                            <div class="invalid-feedback">Selecciona un tipo de bicicleta.</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="plan" class="form-label">Plan de alquiler:</label>
+                        <select class="form-select" id="plan" name="plan" required>
+                            <option value="">Selecciona un plan</option>
+                            <option value="1_hora">1 hora</option>
+                            <option value="medio_dia">Medio día</option>
+                            <option value="dia_completo">Día completo</option>
+                        </select>
+                        <div class="invalid-feedback">Elige un plan de la lista.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cantidad" class="form-label">Cantidad de bicicletas:</label>
+                        <input type="number" class="form-control" id="cantidad" name="cantidad"
+                            min="1" max="6" step="1" value="1" required>
+                        <div class="invalid-feedback">
+                            Ingresa un número entero entre 1 y 6.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recorrido" class="form-label">Recorrido guiado:</label>
+                        <select class="form-select" id="recorrido" name="recorrido">
+                            <option value="ninguno">Ninguno</option>
+                            <option value="rio_parques">Río y parques</option>
+                            <option value="sabores_barrio">Sabores de barrio</option>
+                            <option value="reto_palmas">Reto Las Palmas</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="comentarios" class="form-label">
+                            Comentarios adicionales (opcional):
+                        </label>
+                        <textarea class="form-control" id="comentarios" name="comentarios"
+                                rows="5" maxlength="300" aria-describedby="ayuda-comentarios"
+                                placeholder="Escribe aquí tus comentarios"></textarea>
+                        <small id="ayuda-comentarios" class="form-text">Máximo 300 caracteres.</small>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 mb-4">
+                    <legend class="fs-5 fw-bold">Confirmación</legend>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="politicas"
+                            name="politicas" value="aceptadas" required>
+                        <label class="form-check-label" for="politicas">
+                            Acepto las políticas de alquiler.
+                        </label>
+                        <div class="invalid-feedback">
+                            Debes aceptar las políticas de alquiler para enviar la reserva.
+                        </div>
+                    </div>
+
+                    
+                    <button type="button" class="btn btn-outline-success btn-sm mt-3"
+                            data-bs-toggle="modal" data-bs-target="#modalPoliticas">
+                        Leer las políticas de alquiler
+                    </button>
+                </fieldset>
+
+                <div class="mb-4">
+                    <button type="submit" class="btn btn-success btn-lg">Enviar reserva</button>
+                </div>
+
+            </form>
+
+        </section>
 
                 </form>
 
@@ -397,6 +319,37 @@
 
     </main>
 
+    <div class="modal fade" id="modalPoliticas" tabindex="-1"
+     aria-labelledby="tituloPoliticas" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloPoliticas">Políticas de alquiler</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <ol>
+                        <li>Presenta tu documento de identidad original al recoger la bicicleta.</li>
+                        <li>Revisa la bicicleta con el asesor antes de salir.</li>
+                        <li>Cada 15 minutos de retraso en la devolución tienen un recargo de $5.000.</li>
+                        <li>Los daños por mal uso se cobran según el costo de la reparación.</li>
+                        <li>Los menores de edad deben estar acompañados por un adulto responsable.</li>
+                    </ol>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                        Entendido
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <a class="boton-whatsapp"
     href="https://wa.me/573000000000"
     target="_blank"
@@ -432,6 +385,27 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(() => {
+  'use strict'
+
+  
+  const forms = document.querySelectorAll('.needs-validation')
+
+  
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
 
 </body>
 </html>
