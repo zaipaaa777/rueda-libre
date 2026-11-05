@@ -48,7 +48,7 @@ img {
     height: auto;
 }
 
-section, article, aside {
+section, aside {
     margin-bottom: var(--espacio-grande);
 }
 
@@ -81,17 +81,7 @@ header h1 {
     text-align: center;
 }
 
-#menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
 
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
 
 #menu a {
     display: block;
@@ -158,30 +148,7 @@ header > p {
 
 /* 5. Tarjetas de servicios */
 
-.contenedor-servicios {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
 
-.tarjeta-servicio {
-    width: 100%;
-    margin-bottom: var(--espacio-mediano);
-    padding: var(--espacio-mediano);
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 0.5rem;
-    background-color: #FFFFFF;
-}
-
-.tarjeta-servicio img {
-    width: 100%;
-    margin-bottom: var(--espacio-mediano);
-    border-radius: 0.5rem;
-}
-
-.tarjeta-novedad {
-    position: relative;
-}
 
 .etiqueta-nuevo {
     position: absolute;
@@ -195,76 +162,7 @@ header > p {
 }
 
 
-/* 6. Flota de bicicletas con Grid y Flexbox */
 
-.contenedor-flota {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.tarjeta-flota {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: var(--espacio-mediano);
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 0.5rem;
-    background-color: #FFFFFF;
-}
-
-.tarjeta-flota img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    margin-bottom: var(--espacio-mediano);
-}
-
-.tarjeta-flota h3 {
-    margin-top: 0;
-}
-
-.tarjeta-flota a {
-    display: inline-block;
-    margin-top: auto;
-    padding: var(--espacio-pequeno);
-    background-color: var(--color-verde-ruta);
-    color: var(--color-crema);
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.tarjeta-flota a:hover {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-}
-
-
-/* 7. Galería de rutas */
-
-.contenedor-rutas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.tarjeta-ruta {
-    padding: var(--espacio-mediano);
-    background-color: #FFFFFF;
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 0.5rem;
-}
-
-.tarjeta-ruta img {
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
-.tarjeta-ruta h3 {
-    margin-bottom: var(--espacio-pequeno);
-}
 
 
 /* 8. Enlaces y botones */
@@ -480,27 +378,6 @@ textarea:focus-visible {
         width: 90%;
     }
 
-    .encabezado-contenido {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #menu {
-        flex-direction: row;
-        gap: 1rem;
-    }
-
-    .contenedor-servicios {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contenedor-flota {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contenedor-rutas {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .layout-reservas {
         grid-template-columns: 2fr 1fr;
@@ -543,29 +420,6 @@ textarea:focus-visible {
 
     main {
         max-width: 75rem;
-    }
-
-    .portada-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-
-    .texto-portada {
-        align-items: flex-start;
-        text-align: left;
-        padding: 2rem;
-    }
-
-    .contenedor-rutas {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .contenedor-flota {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .contenedor-servicios {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     .layout-reservas {
