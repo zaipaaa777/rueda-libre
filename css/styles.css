@@ -300,8 +300,148 @@ textarea:focus-visible {
     outline-offset: 4px;
 }
 
+/*imagenes descuentos*/
 
-/* 14. Adaptación para tablets */
+.carousel-item img {
+    height: 320px;
+    object-fit: cover;
+}
+
+
+/* Carrusel de promociones */
+.promos {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgb(20 33 61 / 30%);
+}
+
+.promo-slide {
+    padding: 2.5rem 4rem 4rem;
+    overflow: hidden;
+}
+
+/* Círculos decorativos de fondo */
+.promo-slide::before,
+.promo-slide::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 12%);
+    pointer-events: none;
+}
+
+.promo-slide::before {
+    width: 22rem;
+    height: 22rem;
+    top: -8rem;
+    right: -6rem;
+}
+
+.promo-slide::after {
+    width: 12rem;
+    height: 12rem;
+    bottom: -5rem;
+    left: 20%;
+}
+
+.promo-slide .row {
+    position: relative;
+    z-index: 1;
+}
+
+/* Un color distinto por promoción */
+.promo-verde {
+    background: linear-gradient(135deg, #1E7A4F, #0F4D31);
+    color: #fff;
+}
+
+.promo-naranja {
+    background: linear-gradient(135deg, #F39A2B, #E8741A);
+    color: var(--color-azul-noche);
+}
+
+.promo-azul {
+    background: linear-gradient(135deg, #14213D, #2B3F73);
+    color: var(--color-crema);
+}
+
+.promo-slide h3 {
+    color: inherit;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+/* La cifra gigante es la protagonista */
+.promo-cifra {
+    margin: 0;
+    font-family: var(--fuente-titulos);
+    font-size: clamp(3.5rem, 11vw, 7rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-naranja-pedal);
+}
+
+.promo-naranja .promo-cifra {
+    color: var(--color-azul-noche);
+}
+
+/* Foto con marco inclinado */
+.promo-foto {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 6px solid #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgb(0 0 0 / 35%);
+    transform: rotate(3deg);
+}
+
+/* Controles redondos */
+.promos .carousel-control-prev,
+.promos .carousel-control-next {
+    top: 50%;
+    bottom: auto;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0.75rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: var(--color-azul-noche);
+    border: 2px solid #fff;
+    opacity: 1;
+}
+
+.promos .carousel-control-prev:hover,
+.promos .carousel-control-next:hover {
+    background-color: var(--color-naranja-pedal);
+}
+
+/* Indicadores visibles sobre cualquier color */
+.promos .carousel-indicators {
+    margin-bottom: 1rem;
+}
+
+.promos .carousel-indicators [data-bs-target] {
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background-color: var(--color-azul-noche);
+    opacity: 1;
+}
+
+.promos .carousel-indicators .active {
+    background-color: #fff;
+    border-color: var(--color-azul-noche);
+}
+
+@media (max-width: 767.98px) {
+    .promo-slide {
+        padding: 2rem 3.5rem 4rem;
+    }
+}
+
+
 
 @media (min-width: 768px) {
 
