@@ -75,22 +75,9 @@ header h1 {
 
 
 
-#menu a {
-    display: block;
-    padding: var(--espacio-pequeno);
-    color: var(--color-crema);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-#menu a.activo {
+.navbar .nav-link.active {
     background-color: var(--color-verde-ruta);
-    text-decoration: underline;
-}
-
-#menu a:hover {
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
+    border-radius: 0.375rem;
 }
 
 header > img {
@@ -200,28 +187,6 @@ button:hover {
 }
 
 
-/* 10. Tablas de tarifas */
-
-table {
-    width: 100%;
-    margin-bottom: var(--espacio-grande);
-    border-collapse: collapse;
-    table-layout: fixed;
-    background-color: #FFFFFF;
-    font-size: 0.68rem;
-}
-
-th, td {
-    padding: 0.3rem;
-    border: 1px solid var(--color-gris-asfalto);
-    text-align: left;
-    overflow-wrap: anywhere;
-}
-
-thead th {
-    background-color: var(--color-azul-noche);
-    color: var(--color-crema);
-}
 
 
 /* 11. Formulario de reservas */
@@ -354,13 +319,6 @@ textarea:focus-visible {
         flex: 1;
     }
 
-    table {
-        font-size: 0.875rem;
-    }
-
-    th, td {
-        padding: var(--espacio-pequeno);
-    }
 
 }
 
