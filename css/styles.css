@@ -19,14 +19,7 @@
 
 /* 2. Estilos generales */
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
     font-family: var(--fuente-texto);
     color: var(--color-azul-noche);
     background-color: var(--color-crema);
@@ -36,16 +29,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
     color: var(--color-azul-noche);
-}
-
-p {
-    margin-bottom: var(--espacio-mediano);
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
 }
 
 section, aside {
@@ -65,56 +48,19 @@ header {
     color: var(--color-crema);
 }
 
-
-
-header h1 {
-    margin: 0;
+/* el título de la portada va sobre fondo oscuro */
+header h2 {
     color: var(--color-crema);
-    text-align: center;
 }
 
-
-
+/* página actual en el menú */
 .navbar .nav-link.active {
     background-color: var(--color-verde-ruta);
     border-radius: 0.375rem;
 }
 
-header > img {
-    width: 50%;
-    margin: 1rem auto;
-}
 
-header > p {
-    text-align: center;
-    color: var(--color-crema);
-}
-
-
-/* 4. Portada de inicio con Grid */
-
-
-
-.texto-portada h2,
-.texto-portada p {
-    color: var(--color-crema);
-}
-
-.imagen-portada {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.imagen-portada img {
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
-
-/* 5. Tarjetas de servicios */
-
-
+/* 4. Etiqueta "Nuevo" de las tarjetas */
 
 .etiqueta-nuevo {
     position: absolute;
@@ -128,10 +74,7 @@ header > p {
 }
 
 
-
-
-
-/* 8. Enlaces y botones */
+/* 5. Enlaces */
 
 main a {
     color: var(--color-verde-ruta);
@@ -143,9 +86,7 @@ main a:hover {
 }
 
 
-
-
-/* 9. Botón de WhatsApp */
+/* 6. Botón de WhatsApp */
 
 .boton-whatsapp {
     position: fixed;
@@ -167,93 +108,18 @@ main a:hover {
     color: var(--color-azul-noche);
 }
 
-
-
-
-/* 11. Formulario de reservas */
-
-
-
-.informacion-contacto {
-    padding: var(--espacio-mediano);
-    background-color: #FFFFFF;
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 0.5rem;
-}
-
-fieldset {
-    margin-bottom: var(--espacio-grande);
-    padding: var(--espacio-mediano);
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 0.5rem;
-}
-
-legend {
-    font-family: var(--fuente-titulos);
-    font-weight: 700;
-}
-
-label {
-    font-weight: 600;
-}
-
-input, select, textarea {
-    font-family: var(--fuente-texto);
-    font-size: 1rem;
-}
-
-input:not([type="radio"]):not([type="checkbox"]),
-select,
-textarea {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin-top: var(--espacio-pequeno);
-    padding: var(--espacio-pequeno);
-    border: 1px solid var(--color-gris-asfalto);
-    background-color: #FFFFFF;
-    color: var(--color-azul-noche);
-}
-
-input:hover, select:hover, textarea:hover {
-    border-color: var(--color-verde-ruta);
-}
-
-#formulario-reserva small {
-    display: block;
-    margin-top: var(--espacio-pequeno);
-}
-
-.opcion-formulario {
-    margin-bottom: var(--espacio-pequeno);
+.boton-whatsapp:focus-visible {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 4px;
 }
 
 
-
-.grupo-boton {
-    margin-bottom: var(--espacio-grande);
-}
-
-
-/* 12. Pie de página */
+/* 7. Pie de página */
 
 footer {
-    padding: var(--espacio-grande);
-    padding-bottom: 6rem;
-    text-align: center;
     background-color: var(--color-azul-noche);
     color: var(--color-crema);
-}
-
-.pie-contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.pie-bloque {
-    width: 100%;
+    padding-bottom: 6rem; /* espacio para que el botón de WhatsApp no tape el texto */
 }
 
 footer a {
@@ -265,31 +131,8 @@ footer a:hover {
 }
 
 
-/* 13. Foco para navegar con teclado */
+/* 8. Carrusel de promociones */
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid var(--color-naranja-pedal);
-    outline-offset: 3px;
-}
-
-.boton-whatsapp:focus-visible {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 4px;
-}
-
-/*imagenes descuentos*/
-
-.carousel-item img {
-    height: 320px;
-    object-fit: cover;
-}
-
-
-/* Carrusel de promociones */
 .promos {
     border-radius: 1.5rem;
     overflow: hidden;
@@ -301,7 +144,7 @@ textarea:focus-visible {
     overflow: hidden;
 }
 
-/* Círculos decorativos de fondo */
+/* círculos decorativos de fondo */
 .promo-slide::before,
 .promo-slide::after {
     content: "";
@@ -330,7 +173,7 @@ textarea:focus-visible {
     z-index: 1;
 }
 
-/* Un color distinto por promoción */
+/* un color distinto por promoción */
 .promo-verde {
     background: linear-gradient(135deg, #1E7A4F, #0F4D31);
     color: #fff;
@@ -351,7 +194,7 @@ textarea:focus-visible {
     font-size: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 
-/* La cifra gigante es la protagonista */
+/* la cifra grande es la protagonista */
 .promo-cifra {
     margin: 0;
     font-family: var(--fuente-titulos);
@@ -365,7 +208,7 @@ textarea:focus-visible {
     color: var(--color-azul-noche);
 }
 
-/* Foto con marco inclinado */
+/* foto con marco inclinado */
 .promo-foto {
     width: 100%;
     max-width: 380px;
@@ -377,7 +220,7 @@ textarea:focus-visible {
     transform: rotate(3deg);
 }
 
-/* Controles redondos */
+/* controles redondos */
 .promos .carousel-control-prev,
 .promos .carousel-control-next {
     top: 50%;
@@ -397,7 +240,7 @@ textarea:focus-visible {
     background-color: var(--color-naranja-pedal);
 }
 
-/* Indicadores visibles sobre cualquier color */
+/* puntos indicadores visibles sobre cualquier color */
 .promos .carousel-indicators {
     margin-bottom: 1rem;
 }
@@ -416,13 +259,19 @@ textarea:focus-visible {
     border-color: var(--color-azul-noche);
 }
 
+
+/* 9. Adaptación para pantallas pequeñas */
+
 @media (max-width: 767.98px) {
+
     .promo-slide {
         padding: 2rem 3.5rem 4rem;
     }
+
 }
 
 
+/* 10. Adaptación para tablets */
 
 @media (min-width: 768px) {
 
@@ -430,28 +279,15 @@ textarea:focus-visible {
         width: 90%;
     }
 
-    .pie-contenedor {
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: flex-start;
-    }
-
-    .pie-bloque {
-        flex: 1;
-    }
-
-
 }
 
 
-/* 15. Adaptación para pc*/
+/* 11. Adaptación para pc */
 
 @media (min-width: 1200px) {
 
     main {
         max-width: 75rem;
     }
-
-   
 
 }
