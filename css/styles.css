@@ -7,7 +7,7 @@
     --color-azul-noche: #14213D;
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
-    
+    --color-naranja-oscuro: #9A5200;
 
     --fuente-titulos: "Montserrat", Arial, sans-serif;
     --fuente-texto: "Open Sans", Arial, sans-serif;
@@ -23,13 +23,14 @@
     --bs-link-hover-color: var(--color-azul-noche);
     --bs-link-hover-color-rgb: 20, 33, 61;
     --bs-border-radius: 0.75rem;
+    --bs-body-font-family: var(--fuente-texto);
 }
 
 
 /* 2. Estilos generales */
 
 body {
-    font-family: var(--fuente-texto);
+    
     color: var(--color-azul-noche);
     background-color: var(--color-crema);
     line-height: 1.6;
@@ -90,6 +91,11 @@ main {
     margin-inline: auto;
 }
 
+/* texto naranja oscuro: se lee bien sobre blanco y sobre crema */
+.dato-destacado {
+    color: var(--color-naranja-oscuro);
+}
+
 /* 4. Etiqueta "Nuevo" de las tarjetas */
 
 .etiqueta-nuevo {
@@ -107,13 +113,10 @@ main {
 /* 5. Enlaces */
 
 main a {
-    color: var(--color-verde-ruta);
+    
     font-weight: 600;
 }
 
-main a:hover {
-    color: var(--color-azul-noche);
-}
 
 /* Botón propio: Naranja Pedal */
 
@@ -250,6 +253,11 @@ main a:hover {
     z-index: 1;
 }
 
+/* sobre el verde el naranja no tiene contraste suficiente: se usa crema */
+.promo-verde .promo-cifra {
+    color: var(--color-crema);
+}
+
 /* un color distinto por promoción */
 .promo-verde {
     background: linear-gradient(135deg, #1E7A4F, #0F4D31);
@@ -351,6 +359,20 @@ main a:hover {
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #124D32;
     --bs-btn-active-border-color: #0F4029;
+}
+
+/* Formularios con los colores de la marca */
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    border-color: var(--color-verde-ruta);
+    box-shadow: 0 0 0 0.25rem rgb(30 122 79 / 25%);
+}
+
+.form-check-input:checked {
+    background-color: var(--color-verde-ruta);
+    border-color: var(--color-verde-ruta);
 }
 
 /* 9. Adaptación para pantallas pequeñas */
