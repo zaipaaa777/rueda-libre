@@ -414,6 +414,76 @@ Con esta migración comprobé que Bootstrap facilita el desarrollo de páginas
 
 
 
+Rueda Nocturna: botón con Bootstrap y con Tailwind
 
+Cómo hice el botón en la semana 2 (Bootstrap)
+
+Usé las clases btn btn-naranja btn-lg. btn y btn-lg ya traen la forma 
+y el tamaño del botón. El color naranja no venía en Bootstrap, así que 
+tuve que crear la clase btn-naranja en mi archivo styles.css y cambiar 
+sus variables (--bs-btn-bg, --bs-btn-hover-bg, etc.). Es decir, el HTML 
+tenía el nombre del botón, pero el diseño estaba en otro archivo.
+
+Cómo hice el botón hoy (Tailwind)
+
+Lo hice todo en el HTML, sin escribir nada de CSS, con estas clases:
+
+inline-block rounded-full bg-amber-400 px-8 py-3 font-semibold text-slate-950 hover:bg-amber-300
+Cada clase hace una sola cosa: bg-amber-400 pone el color de fondo, px-8 py-3 el espacio interno, 
+rounded-full redondea las esquinas y hover:bg-amber-300 cambia el color al pasar el mouse.
+
+Diferencia clave
+
+Bootstrap es un framework de componentes: ya trae piezas hechas, como el botón, y si quiero otro estilo
+ tengo que cambiarlas en mi CSS. Tailwind es utility-first: trae clases pequeñas y yo armo el diseño
+  juntándolas en el HTML. Con Bootstrap escribo menos clases, pero con Tailwind el diseño es solo mío.
+
+
+
+Qué encontré en output.css
+
+Busqué .bg-amber-400, que uso en el botón, y sí está en el archivo con su regla.
+Busqué una clase de color rosa que no uso, y no aparece.
+Para probar, la escribí en el título y guardé: apareció en output.css. Al borrarla, 
+seguía apareciendo mientras --watch estaba corriendo. Cuando detuve el --watch y lo 
+volví a iniciar, desapareció.
+
+Por qué pasa
+
+Tailwind lee mis archivos, busca los nombres de clases y solo genera el CSS de las 
+que encuentra. Las que no uso no se agregan, por eso el archivo queda pequeño. 
+Bootstrap trae todas sus clases, las use o no. Con --watch puede quedar alguna 
+clase vieja hasta que lo reinicio.
+
+
+ Reglas  de componentes
+
+Para mantener una misma apariencia en todos los componentes de mi proyecto Rueda Nocturna, establecí unas reglas de diseño utilizando Tailwind.
+
+- Colores: utilicé tonos oscuros de slate para los fondos y textos, y amber como color principal para resaltar los elementos.
+- Bordes: utilicé `rounded-xl` para mantener el mismo redondeado en los componentes.
+- Espaciados: utilicé diferentes clases de Tailwind como `p-2`, `p-4` y `p-6` para organizar los espacios internos.
+- Tipografía: utilicé diferentes tamaños y grosores de texto para diferenciar títulos, descripciones y ayudas.
+- Sombras: utilicé `shadow-lg` para darle profundidad a los componentes.
+- Interactividad:** agregué las variantes `hover:` y `focus-visible:` para mostrar cambios visuales al pasar el cursor o seleccionar elementos con el teclado.
+
+
+
+
+Para realizar mi proyecto utilicé dos formas de trabajar con Tailwind 
+
+En el prototipo utilicé el CDN de Tailwind, que me permitió visualizar los 
+estilos directamente en el navegador sin tener que generar un archivo CSS.
+utilicé un archivo `input.css` y un archivo `output.css`. Con este método
+puedo generar los estilos que necesita mi página y utilizar el archivo CSS
+desde mis documentos HTML.
+
+Verificación de generación de clases
+
+Para comprobar la generación de clases utilicé la terminal 
+de Visual Studio Code. Ejecuté el comando de Tailwind CSS para generar
+ nuevamente el archivo `output.css`.
+También utilicé el comando `grep` para buscar algunas clases 
+utilizadas en mis componentes y verificar que estuvieran presentes en el archivo generado.
 
 
