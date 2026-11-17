@@ -92,3 +92,220 @@ Ancho de Pantalla |	Dispositivo Simulado          |	Comportamiento del Encabezad
 768 px	          |  Tablet (iPad / Vertical)	  |  En fila (md:flex-row), links de navegación ya visibles.	2 columnas (sm:grid-cols-2)	2 columnas (sm:grid-cols-2)	✅ Excelente distribución simétrica en pantallas medianas.
 1024 px	          |  Escritorio estándar          |	Totalmente desplegado con espaciado óptimo.	3 columnas (lg:grid-cols-3)	4 columnas (lg:grid-cols-4)	✅ Retícula profesional de escritorio activada.
 1280 px	          |  Escritorio grande            |	Centrado con ancho máximo controlado (max-w-6xl).	3 columnas (lg:grid-cols-3)
+
+
+
+
+
+
+1. DECISIONES DE LAYOUT Y RESPONSIVE (MOBILE-FIRST)
+
+- Encabezado con Flex: Utilicé flex-col para el celular y md:flex-row para
+  escritorio, ocultando los enlaces de navegación en pantallas pequeñas con
+  hidden md:flex para evitar desbordamientos y dejar visible el botón principal.
+- Rutas con Grid: Elegí Grid (grid-cols-1 sm:grid-cols-2 lg:grid-cols-3) porque
+  me permite controlar exactamente cuántas tarjetas entran por fila en cada
+  breakpoint manteniendo alturas uniformes sin cálculos manuales de ancho.
+- Pasos "¿Cómo funciona?" con Grid: También usé Grid (grid-cols-1 sm:grid-cols-2
+  lg:grid-cols-4) para que los cuatro pasos se distribuyan de forma simétrica
+  desde móvil hasta escritorio.
+
+Pruebas en modo dispositivo (DevTools):
+- 360 px (Móvil): Todo apilado en 1 columna, sin scroll horizontal, lectura clara.
+- 768 px (Tablet): Encabezado en fila con enlaces visibles; rutas y pasos a 2 columnas.
+- 1024 px (Escritorio): Rutas en 3 columnas y pasos en 4 columnas bien alineados.
+- 1280 px (Monitor): Contenido centrado dentro de max-w-6xl con márgenes equilibrados.
+
+2. AUDITORÍA DE CLASES Y REFACTORIZACIÓN (@layer components + @apply)
+
+Al revisar mi código noté que repetía las mismas listas largas de clases en varios
+elementos:
+- Botones principales ("Inscríbete" / "Ver Rutas"): 6 repeticiones (13 clases).
+- Botón secundario ("Ver más rutas"): 1 repetición en landing + kit (10 clases).
+- Etiquetas de nivel en las cards ("Nivel: Fácil/Medio/Difícil"): 3 repeticiones.
+
+Para limpiar el HTML sin abusar de @apply, creé exactamente 3 clases propias
+en src/input.css dentro de @layer components (.btn-primario, .btn-secundario y
+.badge-nivel). Además, organicé todas las utilidades del HTML por categorías:
+Layout -> Espaciado -> Tipografía -> Color -> Estados.
+
+3. MEDICIÓN DE PESO: TAILWIND CSS VS BOOTSTRAP 5.3
+
+Compilé el CSS de producción con el comando --minify y revisé el panel Network
+de las DevTools comparándolo con la versión v2.0 hecha en Bootstrap:
+
+- Rueda Nocturna (Tailwind CSS minificado):
+  * CSS (src/output.css): ~32 KB en disco (~4.1 KB transferidos por red).
+  * JavaScript de framework: 0 KB.
+  * Peso total cargado: ~32 KB.
+
+- Rueda Libre v2.0 (Bootstrap 5.3):
+  * CSS (bootstrap.min.css): ~232 KB en disco (~33 KB transferidos).
+  * JavaScript (bootstrap.bundle.min.js): ~80 KB en disco (~24 KB transferidos).
+  * Peso total cargado: ~312 KB.
+
+4. COMPARATIVA TÉCNICA Y RECOMENDACIÓN PARA RUEDA LIBRE
+
+* Curva de aprendizaje:
+  En Bootstrap pude armar componentes rápido al principio usando sus clases
+  prefabricadas, pero cuando quise cambiar detalles me tocó pelear con sus estilos
+  por defecto. Tailwind me exigió entender bien CSS (flex, grid, espaciados), pero
+  una vez le cogí el ritmo fue mucho más rápido maquetar exactamente lo que quería.
+
+* Personalización e identidad de marca:
+  Bootstrap tiene una apariencia muy genérica que cuesta adaptar. Con @theme en
+  Tailwind pude definir los colores exactos de Rueda Libre (verde-ruta,
+  naranja-pedal, azul-noche, crema y amarillo-farol) junto con Montserrat y Open
+  Sans, y activar el modo oscuro (dark:) de forma nativa y coherente.
+
+* Tamaño final y rendimiento:
+  Tailwind solo compila las clases que realmente escribí en el HTML, logrando un
+  archivo final de apenas ~14 KB y sin JavaScript extra. Bootstrap carga más de
+  300 KB llenos de estilos y scripts que el proyecto ni siquiera utiliza.
+
+* Casos de uso:
+  Usaría Bootstrap para paneles administrativos internos o prototipos donde no
+  importe tener un diseño genérico. Usaría Tailwind para sitios web públicos,
+  landings de marketing y marcas con identidad visual propia.
+
+RECOMENDACIÓN FINAL:
+Recomiendo construir la próxima versión completa del sitio de Rueda Libre con
+Tailwind CSS. Como la mayoría de usuarios llegan desde redes sociales en sus
+celulares, bajar el peso de ~312 KB a ~14 KB mejora notablemente la velocidad de
+carga en datos móviles. Además, nos permite mantener una identidad visual 100%
+fiel a la marca con soporte para modo claro y oscuro usando el mismo archivo de
+configuración @theme en todo el proyecto.
+
+
+
+CRONÓMETRO Y REGISTRO DE DESARROLLO - FORMULARIO DE INSCRIPCIÓN
+
+- Tiempo estimado: 40 minutos.
+- Tiempo real empleado: 34 minutos.
+- Estado: Completado con éxito.
+
+1. Estructura Semántica y Agrupación (<fieldset> y <legend>):
+   - Dividí el formulario en tres fieldsets lógicos para mejorar la experiencia 
+     de usuario y la accesibilidad de lectores de pantalla:
+     1. Datos Personales (Nombre, Correo, Celular).
+     2. Detalles de la Rodada (Ruta, Día, Acompañantes, Nivel).
+     3. Equipamiento y Términos (Bicicleta propia y Aceptación de condiciones).
+   - Cada control cuenta con su respectiva etiqueta (<label>) asociada mediante 
+     el atributo 'for' y 'id'.
+
+2. Validaciones Nativas Aplicadas:
+   - Nombre: required, minlength="3".
+   - Correo: type="email", required.
+   - Celular: type="tel", required, pattern="3[0-9]{9}" con su respectivo 'title' 
+     informativo (exigiendo 10 dígitos y inicio en 3).
+   - Acompañantes: type="number", min="0", max="3", required.
+   - Selects y Radios: todos marcados como required para impedir envíos vacíos.
+   - Casilla de verificación: required para asegurar la aceptación legal.
+
+3. Pruebas de Accesibilidad y Comportamiento:
+   - Formulario vacío: Al intentar enviar, el navegador bloquea el envío y enfoca 
+     automáticamente el primer campo incompleto.
+   - Datos inválidos (ej. celular con 9 dígitos o texto en acompañantes): El patrón 
+     lanza la alerta nativa guiando al usuario.
+   - Navegación por teclado (Tab / Shift + Tab): Funciona de forma fluida y ordenada 
+     siguiendo la estructura del DOM de arriba hacia abajo sin trampas de foco.
+   - Responsive y Modo Oscuro: En celulares se muestra en una columna limpia; desde 
+     'md' los campos cortos se distribuyen en dos columnas simétricas con soporte 
+     completo para el fondo oscuro y bordes de marca.
+
+
+
+
+ Objetivo
+Conectar la landing de Rueda Nocturna (Tailwind) con el sitio de Rueda Libre 
+(Bootstrap) para que la navegación y la marca sean coherentes en ambos productos.
+
+ Tiempo
+ Tiempo real: 50 minutos 
+ estimado : 40 minutos
+
+ Trabajo realizado
+
+1. Sitio Bootstrap (v2.0)
+- Agregué "Rueda Nocturna", con el icono `bi-moon-stars`, a la navbar de las tres páginas:
+  - `index.html` enlaza a `nocturna/index.html`.
+  - `paginas/reservas.html` y `paginas/tarifas.html` enlazan a `../nocturna/index.html`.
+- Agregué una cuarta diapositiva al carrusel de promociones, con la misma estructura de las otras tres (`promo-slide`, badge, `promo-cifra`, título, texto, botón y foto). Creé la clase de color `promo-nocturna` en `css/styles.css` y el cuarto indicador. El botón lleva a la landing.
+
+ 2. Landing Tailwind (`nocturna/`)
+- El logo lleva al inicio del sitio con `../index.html`.
+- Agregué el botón "Reserva tu bici", que lleva a `../paginas/reservas.html`.
+
+ 3. Rutas relativas
+- Desde la raíz se entra a la landing con `nocturna/index.html`.
+- Desde `paginas/` y desde `nocturna/` se sube una carpeta con `../`.
+- Evité las rutas que empiezan con `/`, porque en GitHub Pages apuntan a la raíz del dominio y no a la del repositorio.
+
+ 4. Marca unificada
+- Colores: usé los mismos códigos hexadecimales en las variables `--bs-*` de Bootstrap y en el `@theme` de Tailwind. Los nombres son distintos, pero los valores son idénticos. El fondo de `promo-nocturna` y el botón naranja de la landing usan esos mismos colores.
+- Fuentes: ambos sitios cargan la misma fuente en el `<head>` y la aplican con `--bs-body-font-family` en Bootstrap y `--font-sans` en Tailwind.
+- Pie de página: el teléfono, el correo y la dirección son los mismos en los dos sitios.
+
+ Verificación de enlaces
+Probé en local y en GitHub Pages, y revisé la consola del navegador en busca de recursos en rojo:
+- Navbar "Rueda Nocturna" desde las tres páginas.
+- Diapositiva 4 del carrusel.
+- Logo de la landing hacia el inicio.
+- Botón "Reserva tu bici" hacia reservas.
+
+Resultado: los enlaces funcionan y no hay errores 404 en el sitio publicado.
+
+ Dificultades
+Lo más delicado fueron las rutas relativas, porque el `href` correcto 
+depende de la carpeta donde está el archivo y no de a dónde se quiere llegar. 
+También tuve que acordarme de que GitHub  distingue mayúsculas de minúsculas.
+
+
+
+ Bitácora: Sección "Planes Rueda Nocturna"
+
+ Objetivo
+Crear en la landing de Rueda Nocturna una sección de planes (Individual, Pareja y Grupo) aplicando box model, Flexbox y Grid con Tailwind, y destacar el plan Pareja como "Más elegido".
+
+Tiempo
+Tiempo real: 53 minutos 
+estimado : 45 minutos
+
+ Lo que hice
+
+ 1. Estructura de la sección
+- Agregué la sección `#planes` entre "Nuestras Rutas" y "¿Cómo funciona?", y un enlace "Planes" en el menú del encabezado.
+- Usé una cuadrícula `grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8`: una columna en el celular y tres desde `lg`.
+- Las tres cards quedan de la misma altura porque los elementos de un grid se estiran por defecto hasta la altura de la fila.
+
+ 2. Organización de cada card
+- Cada card es `flex flex-col justify-between gap-6`: el contenido arriba y el botón al final. Así los tres botones quedan en la misma línea aunque el contenido cambie.
+- La lista de beneficios es un `ul` con `flex flex-col gap-3`, y cada `li` usa `flex items-start gap-2` para alinear el ✓ con el texto con una separación uniforme.
+- Puse debajo del título "1 persona / 2 personas / De 4 a 8 personas" para que los precios y las listas empiecen a la misma altura en las tres cards.
+
+ 3. Plan Pareja destacado
+- Borde más grueso y de color: `border-4 border-naranja-pedal` (en modo oscuro `dark:border-amarillo-farol`).
+- Fondo diferente: `bg-amarillo-farol/15` (en modo oscuro `dark:bg-amarillo-farol/10`).
+- Etiqueta "Más elegido" con `absolute -top-4` sobre una card `relative`. Al ser absoluta no ocupa espacio en el flujo y por eso no mueve las demás cards. Por esa razón no usé `overflow-hidden` en las cards de planes.
+
+ 4. Box model coherente con el kit
+- Mismo relleno de las cards de rutas: `p-5 sm:p-6` (20 px en celular y 24 px desde 640 px).
+- Mismas esquinas (`rounded-2xl`), mismo `gap` entre cards y mismos botones `btn-primario`.
+- La única diferencia es el borde del Pareja (4 px contra 1 px de las otras).
+
+ 5. Modo oscuro y contraste
+- Todos los textos tienen su variante `dark:` (títulos en blanco, textos en `crema`, precios en `amarillo-farol`).
+- Para el plan destacado usé un fondo en tinte suave y no un color sólido, así el texto conserva el contraste en modo claro y oscuro.
+- Los precios usan `naranja-oscuro` en modo claro porque tiene mejor contraste sobre el fondo crema.
+
+ Verificación en DevTools
+- Computed: el ancho y el relleno de las tres cards coinciden.  
+- Celular (375 px): una sola columna, sin scroll horizontal.
+- Modo oscuro (emulado en ): el plan Pareja se distingue por color y por texto.
+- Contraste: revisé los textos pequeños en gris con el selector de color de DevTools.
+
+ Dificultades
+Lo más difícil fue que la etiqueta "Más elegido" no desplazara el contenido del plan Pareja. Lo resolví con posición absoluta en lugar de ponerla como un elemento más dentro de la card.
+
+
+

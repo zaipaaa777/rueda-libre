@@ -1,1 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 @import "tailwindcss";
+
+@theme {
+  /* colores de la marca + Amarillo Farol */
+  --color-verde-ruta: #1E7A4F;
+  --color-naranja-pedal: #F39A2B;
+  --color-azul-noche: #14213D;
+  --color-crema: #FAF6EF;
+  --color-gris-asfalto: #5B6470;
+  --color-naranja-oscuro: #9A5200;
+  --color-amarillo-farol: #FFD166;
+
+  /* tipografías de la marca */
+  --font-titulos: "Montserrat", Arial, sans-serif;
+  --font-texto: "Open Sans", Arial, sans-serif;
+}
+
+@layer components {
+  /*  (Layout -> Espaciado -> Tipografía -> Color -> Estados) */
+  .btn-primario {
+    @apply inline-block rounded-full px-7 py-3 text-center font-titulos text-sm font-semibold bg-amarillo-farol text-azul-noche shadow-lg shadow-naranja-pedal/20 transition hover:bg-naranja-pedal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-naranja-oscuro;
+  }
+
+  /*  (Layout -> Espaciado -> Tipografía -> Color -> Estados) */
+  .btn-secundario {
+    @apply inline-block rounded-full px-7 py-3 text-center font-titulos text-sm font-semibold bg-gris-asfalto/10 text-azul-noche dark:bg-gris-asfalto/30 dark:text-crema transition hover:bg-gris-asfalto/20 dark:hover:bg-gris-asfalto/50;
+  }
+
+  /*  (Layout -> Espaciado -> Tipografía) */
+  .badge-nivel {
+    @apply inline-block rounded-full px-3 py-1 font-titulos text-xs font-semibold uppercase tracking-wide;
+  }
+}

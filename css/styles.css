@@ -253,6 +253,10 @@ main a {
     z-index: 1;
 }
 
+.promo-nocturna {
+    background-color: #14213D 
+}
+
 /* sobre el verde el naranja no tiene contraste suficiente: se usa crema */
 .promo-verde .promo-cifra {
     color: var(--color-crema);
